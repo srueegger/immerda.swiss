@@ -1,0 +1,16 @@
+/* Import Variables */
+@import "variables";
+
+/* Import global Styles */
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/pace-js/pace-theme-default";
+
+/* Import Theme Styles */
+@import "typo";
+@import "header";
+@import "global";
+@import "footer";
+@import "gutenberg";
+@import "404";
+
+/* Import Blocks */

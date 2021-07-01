@@ -1,0 +1,10 @@
+/* Gutenberg Colors */
+$gutenberg-colors: ("primary": #637F91, "secondary": #f3ebe5, "black": #000000, 'gray': #c0ccd3);
+@each $color, $value in $gutenberg-colors {
+  .has-#{$color}-color {
+    color: $value;
+  }
+  .has-#{$color}-background-color {
+    background-color: $value;
+  }
+}
