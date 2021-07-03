@@ -97,9 +97,17 @@
         font-weight: 700;
       }
     }
-    &.current-menu-item {
+    &.current-menu-item,
+    &.wpml-ls-current-language {
       a {
         font-weight: 700;
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    li {
+      &.wpml-ls-item {
+        display: none;
       }
     }
   }
