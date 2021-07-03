@@ -82,7 +82,7 @@ wp-admin/
 node_modules/
 bower_components/
 wp-content/plugins/*
-!wp-content/plugins/ot-cpt-tax/
+!wp-content/plugins/id-cpt-tax/
 wp-content/themes/immerda/package-lock.json
 wp-content/themes/immerda/dist-assets/js/theme.min.js
 wp-content/themes/immerda/dev-assets/js/theme.js
