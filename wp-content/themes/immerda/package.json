@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.0.2",
-    "pace-js": "^1.2.4"
+    "pace-js": "^1.2.4",
+    "hamburgers": "^1.1.3"
   }
 }

@@ -14,7 +14,6 @@ define( 'DIST_JS', THEME_URI . '/dist-assets/js' );
 /***************************************
  * Include helpers (post types, taxonomies, metaboxes etc.)
  ***************************************/
-require_once 'inc/bootstrap-navwalker.php';
 
 
 /***************************************
@@ -33,15 +32,16 @@ function immerda_scripts() {
 	$js_depend = array(
 		'jquery'
 	);
+	wp_enqueue_style( 'immerda-google-fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap', array() );
 	if ( WP_DEBUG ) {
 		$modificated_css = date( 'YmdHis', filemtime( get_stylesheet_directory() . '/dev-assets/css/theme.css' ) );
 		$modificated_js = date( 'YmdHis', filemtime( get_stylesheet_directory() . '/dev-assets/js/theme.js' ) );
-		wp_enqueue_style( 'immerda-style', DEV_CSS . '/theme.css', array(), $modificated_css );
+		wp_enqueue_style( 'immerda-style', DEV_CSS . '/theme.css', array( 'immerda-google-fonts' ), $modificated_css );
 		wp_register_script( 'immerda-script', DEV_JS . '/theme.js', $js_depend, $modificated_js, true );
 	} else {
 		$modificated_css = date( 'YmdHis', filemtime( get_stylesheet_directory() . '/dist-assets/css/theme.min.css' ) );
 		$modificated_js = date( 'YmdHis', filemtime( get_stylesheet_directory() . '/dist-assets/js/theme.min.js' ) );
-		wp_enqueue_style( 'immerda-style', DIST_CSS . '/theme.min.css', array(), $modificated_css );
+		wp_enqueue_style( 'immerda-style', DIST_CSS . '/theme.min.css', array( 'immerda-google-fonts' ), $modificated_css );
 		wp_register_script( 'immerda-script', DIST_JS . '/theme.min.js', $js_depend, $modificated_js, true );
 	}
 	$bingo_vars = array(
@@ -62,7 +62,8 @@ if ( function_exists('register_nav_menus') ) {
 	register_nav_menus(
 		array(
 			'main' => 'Haupt Navigation',
-			'foider' => 'Foider Navigation'
+			'footer' => 'Footer Navigation',
+			'social' => 'Social Navigation'
 		)
 	);
 }
@@ -107,27 +108,38 @@ add_filter( 'block_categories', 'id_mario_block_category', 10, 2);
 function id_gutenberg_colors_support() {
 	add_theme_support( 'editor-color-palette', array(
 		array(
-			'name'  => esc_html__( 'Primary', 'id_theme' ),
-			'slug'  => 'primary',
-			'color' => '#637F91'
-		),
-		array(
-			'name'  => esc_html__( 'Secondary', 'id_theme' ),
-			'slug'  => 'secondary',
-			'color' => '#f3ebe5'
-		),
-		array(
-			'name'  => esc_html__( 'Black', 'id_theme' ),
+			'name'  => esc_html__( 'Schwarz', 'id_theme' ),
 			'slug'  => 'black',
 			'color' => '#000000'
 		),
 		array(
+			'name'  => esc_html__( 'Rot', 'id_theme' ),
+			'slug'	=> 'red',
+			'color' => '#8b0500'
+		),
+		array(
 			'name'  => esc_html__( 'Grau', 'id_theme' ),
-			'slug'	=> 'gray',
-			'color' => '#c0ccd3'
+			'slug'  => 'gray',
+			'color' => '#757575'
 		)
 	) );
-	// Disable theme support for custom colors.
-	add_theme_support( 'disable-custom-colors' );
 }
 add_action( 'after_setup_theme', 'id_gutenberg_colors_support' );
+
+/***************************************
+ * Benutzerdefinierter Sprachumschalter
+ ***************************************/
+function id_custom_lng_switch() {
+	$languages = apply_filters( 'wpml_active_languages', array( 'skip_missing' => 0 ) );
+	if( !empty( $languages ) ) {
+		echo '<div id="lng_switcher_container" class="d-none d-lg-flex"><ul class="list-unstyled mb-0">';
+		foreach( $languages as $language ) {
+			$add_active = '';
+			if( $language['active'] ) {
+				$add_active = ' class="active" ';
+			}
+			echo '<li><a ' . $add_active . 'href="' . esc_url( $language['url'] ) . '" target="_self">' . strtoupper( esc_attr( $language['language_code'] ) ) . '</a></li>';
+		}
+		echo '</ul></div>';
+	}
+}

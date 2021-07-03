@@ -1,0 +1,24 @@
+#site_footer {
+  font-weight: 300;
+  min-height: 50px;
+  background: $gray-700;
+}
+
+#footer_menu {
+  list-style: none;
+  padding-left: 0;
+  li {
+    line-height: 25px;
+    @include font-size(.85rem);
+    &:not(:last-of-type) {
+      margin-right: 25px;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    text-align: center;
+    li {
+      display: inline-block;
+      line-height: 50px;
+    }
+  }
+}

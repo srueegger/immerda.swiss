@@ -1,0 +1,49 @@
+.people_content {
+  &--image {
+    width: 100%;
+    height: calc(100vh - 80px);
+    object-fit: cover;
+    object-position: center top;
+  }
+  &--imagecontent {
+    position: absolute;
+    bottom: 250px;
+    width: 100%;
+  }
+  &--scrolldown {
+    height: 80px;
+    text-align: center;
+    position: relative;
+    span {
+      position: absolute;
+      bottom: 50%;
+      transform: translateY(50%);
+      svg {
+        @include font-size(2.5rem);
+        color: $white;
+      }
+    }
+  }
+  #people_content {
+    min-height: 100vh;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  @include media-breakpoint-up(lg) {
+    #people_content {
+      &>div {
+        position: absolute;
+        bottom: 50%;
+        transform: translateY(50%);
+        --bs-gutter-x: 1.5rem;
+        padding-left: calc(var(--bs-gutter-x) * -.5);
+        padding-right: calc(var(--bs-gutter-x) * -.5);
+        width: 100%;
+        margin: auto;
+        p {
+          columns: 2;
+        }
+      }
+    }
+  }
+}

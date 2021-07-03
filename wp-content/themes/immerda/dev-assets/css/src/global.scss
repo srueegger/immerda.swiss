@@ -1,3 +1,58 @@
+body {
+  overflow-x: hidden;
+  &.single-id_people {
+    background: $black;
+    color: $white;
+  }
+}
+
 #main_wrapper {
   opacity: 0;
+}
+
+.id_logo {
+  @include font-size(2rem);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  span {
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+  }
+}
+
+.pace .pace-progress {
+  background: $red;
+}
+
+button {
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+.header_spacer {
+  margin-top: calc(80px + 25px);
+}
+
+.text-black {
+  color: $black;
+}
+
+#site_main {
+  min-height: calc(100vh - 80px - 25px);
+  position: relative;
+  &.special_background {
+    &:before {
+      content: '';
+      width: 30%;
+      height: calc(100% + 25px);
+      background: $gray-900;
+      position: absolute;
+      right: -200px;
+      top: -25px;
+      transform: skew(-20deg);
+      z-index: -1;
+    }
+  }
 }

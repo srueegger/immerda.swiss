@@ -1,0 +1,57 @@
+{
+    "key": "group_60e04d6e7a7d9",
+    "title": "Menü Icon",
+    "fields": [
+        {
+            "key": "field_60e04d8b98344",
+            "label": "Icon auswählen",
+            "name": "socialmenu_icon",
+            "type": "font-awesome",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "icon_sets": [
+                "fab"
+            ],
+            "custom_icon_set": "",
+            "default_label": "&lt;i class=\"fab\"&gt;&amp;#xf082;&lt;\/i&gt; facebook-square",
+            "default_value": "fab fa-facebook-square",
+            "save_format": "class",
+            "allow_null": 0,
+            "show_preview": 1,
+            "enqueue_fa": 0,
+            "fa_live_preview": "",
+            "choices": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/social"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1625312688
+}

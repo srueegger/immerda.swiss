@@ -4,6 +4,7 @@
 /* Import global Styles */
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 @import "../../../node_modules/pace-js/pace-theme-default";
+@import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 
 /* Import Theme Styles */
 @import "typo";
@@ -14,3 +15,7 @@
 @import "404";
 
 /* Import Blocks */
+@import "blocks/jobs";
+
+/* Import CPT Layouts */
+@import "cpt/people";

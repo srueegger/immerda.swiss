@@ -1,10 +1,21 @@
 /* Gutenberg Colors */
-$gutenberg-colors: ("primary": #637F91, "secondary": #f3ebe5, "black": #000000, 'gray': #c0ccd3);
+$gutenberg-colors: ("black": #000000, 'red': #8b0500, 'gray': #757575);
 @each $color, $value in $gutenberg-colors {
   .has-#{$color}-color {
     color: $value;
   }
   .has-#{$color}-background-color {
     background-color: $value;
+  }
+}
+
+.wp-block-image {
+  &.contain {
+    img {
+      width: 100%;
+      object-fit: contain;
+      object-position: center center;
+      height: 300px;
+    }
   }
 }
