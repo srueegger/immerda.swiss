@@ -3,7 +3,7 @@
     .carousel-item {
       height: 650px;
       .carousel_content {
-        color: $white;
+        color: $white !important;
         img {
           width: 100%;
           height: 650px;

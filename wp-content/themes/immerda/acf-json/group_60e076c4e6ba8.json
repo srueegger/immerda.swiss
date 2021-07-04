@@ -135,6 +135,26 @@
             "wpml_cf_preferences": 0
         },
         {
+            "key": "field_60e201b8547c8",
+            "label": "Beschriftung für Button",
+            "name": "people_btn",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_60e0788b5acb9",
             "label": "Weitere Informationen",
             "name": "",
@@ -271,5 +291,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1625410673
+    "modified": 1625424356
 }

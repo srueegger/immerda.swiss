@@ -50,4 +50,10 @@
 			}
 		}
 	});
+
+	/* Link per JS öffnen */
+	$('.js_goto').on('click', function() {
+		var go_to_url = $(this).data('href');
+		window.location.href = go_to_url;
+	});
 })(jQuery);

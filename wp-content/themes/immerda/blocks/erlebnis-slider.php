@@ -67,6 +67,7 @@ if( !empty($block['align']) ) {
                     <h1><?php the_field( 'people_quote', $erlebnis->ID ); ?></h1>
                     <?php the_field( 'people_orga', $erlebnis->ID ); ?>
                     <p><?php echo get_the_title( $erlebnis->ID ); ?> - <?php the_field( 'people_job', $erlebnis->ID ); ?></p>
+                    <button type="button" data-href="<?php echo get_the_permalink( $erlebnis->ID ); ?>" class="btn btn-outline-light js_goto"><?php the_field( 'people_btn', $erlebnis->ID ); ?></button>
                   </div>
                 </div>
               </div></a>
