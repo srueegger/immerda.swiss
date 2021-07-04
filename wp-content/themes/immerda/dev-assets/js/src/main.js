@@ -26,8 +26,12 @@
 	/* Animmiertes Scrollen zu einem Element */
 	$('.js_scroll_to').on('click', function() {
 		var scroll_to = $(this).data('scrollto');
+		var offset = 160;
+		if($(this).hasClass('no_offset')) {
+			offset = 80;
+		}
 		$('html, body').animate({
-			scrollTop: ($(scroll_to).offset().top - 160
+			scrollTop: ($(scroll_to).offset().top - offset
 		)}, 'slow');
 	});
 

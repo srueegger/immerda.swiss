@@ -16,6 +16,12 @@ define( 'DIST_JS', THEME_URI . '/dist-assets/js' );
  ***************************************/
 require_once 'inc/custom-blocks.php';
 
+/***************************************
+ * Bildgrössen definieren
+ ***************************************/
+add_image_size( 'slider-lg', 1296, 650, array( 'left', 'top' ) );
+add_image_size( 'slider-lg-2x', 2592, 1300, array( 'left', 'top' ) );
+
 
 /***************************************
  *  WordPress Theme Support

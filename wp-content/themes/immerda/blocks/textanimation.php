@@ -42,7 +42,7 @@ if( !empty($block['align']) ) {
     </div>
   </div>
   <div class="scroll_down_container text-center">
-    <span class="js_scroll_to" data-scrollto="#people_content" role="button">
+    <span class="js_scroll_to no_offset" data-scrollto=".js_scroll_me" role="button">
       <i class="fas fa-arrow-circle-down fa-3x"></i>
     </span>
   </div>
