@@ -47,6 +47,9 @@
 				$('.textanimation h2.dynamic').addClass('d-none');
 				$('.textanimation h2.static').removeClass('d-none');
 				$('.text-rotating-container').remove();
+				setTimeout(function() {
+					$('.js_scroll_to').trigger('click');
+				}, 3500);
 			}
 		}
 	});
