@@ -1,7 +1,7 @@
 <?php
 get_header();
 if ( have_posts() ) : while ( have_posts() ) : the_post();
-  $image = get_field( 'people_image' );
+  $image = get_field( 'people_image_detail' );
   ?>
   <div class="people_content">
     <picture>
