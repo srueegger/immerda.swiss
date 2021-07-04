@@ -125,7 +125,7 @@
   right: 0;
   background: $red;
   top: 150px;
-  -webkit-writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr; /* Safari Bugfix */
   writing-mode: sideways-lr;
   padding: 5px 0;
   transition: width .2s;
