@@ -21,6 +21,26 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_60e18d25efd1e",
+            "label": "Seitentitel ausblenden?",
+            "name": "page_hide_title",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "wpml_cf_preferences": 0
         }
     ],
     "location": [
@@ -47,5 +67,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1625332654
+    "modified": 1625394493
 }

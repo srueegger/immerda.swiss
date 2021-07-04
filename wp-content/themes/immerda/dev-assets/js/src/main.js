@@ -30,4 +30,20 @@
 			scrollTop: ($(scroll_to).offset().top - 160
 		)}, 'slow');
 	});
+
+	/* Texte animieren */
+	var count_elements = $('.text-rotating').text().split('|').length - 1;
+	var text_rotating = $('.text-rotating');
+	text_rotating.Morphext({
+		animation: "flipInX",
+		separator: "|",
+		speed: text_rotating.data('speed'),
+		complete: function () {
+			if(this.index == count_elements) {
+				$('.textanimation h2.dynamic').addClass('d-none');
+				$('.textanimation h2.static').removeClass('d-none');
+				$('.text-rotating-container').remove();
+			}
+		}
+	});
 })(jQuery);

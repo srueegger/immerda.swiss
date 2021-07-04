@@ -5,6 +5,7 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 @import "../../../node_modules/pace-js/pace-theme-default";
 @import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
+@import "../../../node_modules/animate-sass/animate";
 
 /* Import Theme Styles */
 @import "typo";
@@ -16,6 +17,7 @@
 
 /* Import Blocks */
 @import "blocks/jobs";
+@import "blocks/textanimation";
 
 /* Import CPT Layouts */
 @import "cpt/people";

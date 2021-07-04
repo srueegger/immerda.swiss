@@ -14,6 +14,7 @@ define( 'DIST_JS', THEME_URI . '/dist-assets/js' );
 /***************************************
  * Include helpers (post types, taxonomies, metaboxes etc.)
  ***************************************/
+require_once 'inc/custom-blocks.php';
 
 
 /***************************************

@@ -1,0 +1,96 @@
+{
+    "key": "group_60e1af2fe7b7d",
+    "title": "Block: Text Animation",
+    "fields": [
+        {
+            "key": "field_60e1b4f3c37d8",
+            "label": "Geschwindigkeit der Textrotation",
+            "name": "block_ta_speed",
+            "type": "number",
+            "instructions": "Wert in Millissekunden. 1'000 Millisekunden = 1 Sekunde",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": 3000,
+            "placeholder": "",
+            "prepend": "",
+            "append": "ms",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_60e1af4225e7c",
+            "label": "Texte",
+            "name": "block_ta_txts",
+            "type": "repeater",
+            "instructions": "In den Texten darf folgendes Zeichen nicht vorkommen: \"|\"",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "acfe_repeater_stylised_button": 0,
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Text hinzufügen",
+            "sub_fields": [
+                {
+                    "key": "field_60e1af5a25e7d",
+                    "label": "Text",
+                    "name": "txt",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/id-text-animation"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "above_field",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1625404740
+}

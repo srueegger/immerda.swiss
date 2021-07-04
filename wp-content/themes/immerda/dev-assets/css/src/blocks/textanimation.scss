@@ -1,0 +1,31 @@
+.textanimation {
+  height: calc(100vh - 80px);
+  .container {
+    position: absolute;
+    width: 100%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    right: 50%;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .scroll_down_container {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    svg {
+      font-size: 2rem;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    h2 {
+      font-size: 4rem;
+    }
+    .scroll_down_container {
+      svg {
+        font-size: 3rem;
+      }
+    }
+  }
+}

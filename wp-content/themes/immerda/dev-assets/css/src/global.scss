@@ -11,13 +11,21 @@ body {
 }
 
 .id_logo {
-  @include font-size(2rem);
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 700;
-  span {
+  span,
+  cite {
     text-decoration: underline;
     text-decoration-thickness: 4px;
+  }
+  &:not(.no_font_size) {
+    font-size: 1.2rem;
+  }
+  @include media-breakpoint-up(lg) {
+    &:not(.no_font_size) {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -33,6 +41,9 @@ button {
 
 .header_spacer {
   margin-top: calc(80px + 25px);
+  &.without_space {
+    margin-top: 80px;
+  }
 }
 
 .text-black {
@@ -55,4 +66,8 @@ button {
       z-index: -1;
     }
   }
+}
+
+.morphext > .animated {
+  display: inline-block;
 }
