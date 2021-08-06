@@ -24,4 +24,9 @@
   .image_overlay--txt {
     color: $white;
   }
+  @include media-breakpoint-up(lg) {
+    .image_overlay--title {
+      font-size: 4rem;
+    }
+  }
 }

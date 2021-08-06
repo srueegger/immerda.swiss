@@ -33,7 +33,7 @@ if( !empty($block['align']) ) {
             <div class="container yx_middle">
               <div class="row">
                 <div class="col-12">
-                  <h2 class="text-center" style="color: <?php the_sub_field( 'txt_color' ); ?>;"><?php the_sub_field( 'title' ); ?></h2>
+                  <h2 class="text-center image_overlay--title" style="color: <?php the_sub_field( 'txt_color' ); ?>;"><?php the_sub_field( 'title' ); ?></h2>
                 </div>
               </div>
             </div>
