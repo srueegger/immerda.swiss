@@ -8,9 +8,19 @@
   </head>
   <body <?php body_class(); ?>>
     <div id="main_wrapper">
-      <div id="side_btn" class="shadow">
-        <a class="text-decoration-none text-white text-uppercase" href="<?php echo get_the_permalink( get_field( 'sys_soli_page', 'option' ) ); ?>" target="_self"><?php _e( 'Solidarisieren' ); ?></a>
-      </div>
+      <?php
+      $scroll_nav_menu_id = get_field( 'page_has_scrollnav', get_queried_object_id() );
+      if( !empty( $scroll_nav_menu_id ) ) {
+        $scroll_items = wp_get_nav_menu_items( $scroll_nav_menu_id );
+        if( !empty( $scroll_items ) ) {
+          echo '<ul class="side_btns list-unstyled">';
+          foreach( $scroll_items as $item ) {
+            echo '<li><a class="js_scroll_nav" href="' . esc_url( $item->url ) . '">' . esc_attr( $item->title ) . '</a></li>';
+          }
+          echo '</ul>';
+        }
+      }
+      ?>
       <header>
         <nav id="nav_head" class="navbar navbar-toggleable-lg fixed-top">
           <div class="container position-relative">

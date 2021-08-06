@@ -79,4 +79,11 @@
 		setHeights: false,
 		scrollSpeed: 750
 	});
+
+	/* Scroll Nav on Click */
+	$('.js_scroll_nav').on('click', function(event) {
+		event.preventDefault();
+		var go_to = $(this).prop('href');
+		$.scrollify.move(go_to.substring(go_to.indexOf('#')));
+	});
 })(jQuery);

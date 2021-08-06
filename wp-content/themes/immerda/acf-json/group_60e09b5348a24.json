@@ -41,6 +41,28 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_610da3ecb75af",
+            "label": "Scroll Navigation anzeigen?",
+            "name": "page_has_scrollnav",
+            "type": "number",
+            "instructions": "Falls es eine Scroll Navigation gibt, die ID des Menüs eintragen, sonst bei 0 lassen.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "wpml_cf_preferences": 0
         }
     ],
     "location": [
@@ -67,5 +89,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1625394493
+    "modified": 1628284024
 }
