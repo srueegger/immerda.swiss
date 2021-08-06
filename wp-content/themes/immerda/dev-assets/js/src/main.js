@@ -1,4 +1,7 @@
 (function ($) {
+	/* Globale Variabeln */
+	var waypoint_screen_height = screen.height / 2 - 80;
+
 	/* Pace initalisieren */
 	Pace.on('done', function () {
 		setTimeout(function () {
@@ -48,9 +51,6 @@
 				$('.textanimation h2.dynamic').addClass('d-none');
 				$('.textanimation h2.static').removeClass('d-none');
 				$('.text-rotating-container').remove();
-				setTimeout(function() {
-					$('.js_scroll_to').trigger('click');
-				}, 3500);
 			}
 		}
 	});
@@ -59,5 +59,17 @@
 	$('.js_goto').on('click', function() {
 		var go_to_url = $(this).data('href');
 		window.location.href = go_to_url;
+	});
+
+	var waypoints = $('.js_io_waypoint.start').waypoint(function(direction) {
+		/* direction kann "down" oder "up" sein */
+		console.log(direction);
+		if(direction == 'down') {
+			this.element.classList.add('zoom');
+		} else if(direction == 'up') {
+			this.element.classList.remove('zoom');
+		}
+	}, {
+		offset: waypoint_screen_height
 	});
 })(jQuery);

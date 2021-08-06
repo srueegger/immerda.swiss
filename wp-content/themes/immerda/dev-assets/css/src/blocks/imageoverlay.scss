@@ -1,0 +1,27 @@
+.image_overlay [class*="bg_"] {
+  position: relative;
+  height: 100vh;
+  .image_overlay--image {
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;
+    height: 100vh;
+  }
+  &.start {
+    .image_overlay--image {
+      width: 70%;
+      height: 70vh;
+      margin: auto;
+      transition: all .5s;
+    }
+  }
+  &.zoom {
+    .image_overlay--image {
+      width: 100%;
+      height: 100vh;
+    }
+  }
+  .image_overlay--txt {
+    color: $white;
+  }
+}

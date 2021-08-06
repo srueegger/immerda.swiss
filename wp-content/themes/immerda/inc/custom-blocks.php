@@ -94,5 +94,37 @@ if( function_exists('acf_register_block_type') ):
       'anchor' => false,
     ),
   ));
+
+  acf_register_block_type(array(
+    'name' => 'image_overlays',
+    'title' => 'Bild Overlay',
+    'description' => 'Zeigt ein Bild-Overlay an',
+    'category' => 'widgets',
+    'keywords' => array(
+      0 => 'apple',
+      1 => 'overlay',
+      2 => 'image'
+    ),
+    'post_types' => array(
+      0 => 'page',
+    ),
+    'mode' => 'edit',
+    'align' => '',
+    'align_content' => NULL,
+    'render_template' => 'blocks/image-overlay.php',
+    'render_callback' => '',
+    'enqueue_style' => '',
+    'enqueue_script' => '',
+    'enqueue_assets' => '',
+    'icon' => 'images-alt',
+    'supports' => array(
+      'align' => false,
+      'mode' => true,
+      'multiple' => true,
+      'jsx' => false,
+      'align_content' => false,
+      'anchor' => false,
+    ),
+  ));
   
   endif;
