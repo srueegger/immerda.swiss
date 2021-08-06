@@ -21,6 +21,8 @@ require_once 'inc/custom-blocks.php';
  ***************************************/
 add_image_size( 'slider-lg', 1296, 650, array( 'left', 'top' ) );
 add_image_size( 'slider-lg-2x', 2592, 1300, array( 'left', 'top' ) );
+add_image_size( 'slide_mobile', 450 );
+add_image_size( 'slide_mobile-2x', 900 );
 
 
 /***************************************

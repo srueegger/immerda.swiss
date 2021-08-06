@@ -43,17 +43,24 @@ if( !empty($block['align']) ) {
       } elseif( get_row_layout() == 'image_txt' ) {
         /* Bild und Text ausgeben */
         $image = get_sub_field( 'image' );
+        if( wp_is_mobile() ) {
+          $image_print = $image['sizes']['slide_mobile'];
+          $image_print_2x = $image['sizes']['slide_mobile-2x'];
+        } else {
+          $image_print = $image['sizes']['slider-lg'];
+          $image_print_2x = $image['sizes']['slider-lg-2x'];
+        }
         ?>
         <style>
           #overlay_index_<?php echo $overlay_counter; ?> .image_overlay--image {
-            background-image: url("<?php echo $image['sizes']['slider-lg']; ?>");
+            background-image: url("<?php echo $image_print; ?>");
           }
           @media /* only for retina displays */
           only screen and (min-device-pixel-ratio: 2),
           only screen and (min-resolution: 192dpi),
           only screen and (min-resolution: 2dppx) {
             #overlay_index_<?php echo $overlay_counter; ?> .image_overlay--image {
-              background-image: url("<?php echo $image['sizes']['slider-lg-2x']; ?>");
+              background-image: url("<?php echo $image_print_2x; ?>");
             }
           }
         </style>
@@ -98,18 +105,26 @@ if( !empty($block['align']) ) {
         if( !empty( $erlebnisse ) ) {
           $erlebnis_counter = 1;
           foreach( $erlebnisse as $erlebnis ) {
-            $image = get_field( 'people_image', $erlebnis->ID );
+            if( wp_is_mobile() ) {
+              $image = get_field( 'people_image_mobile', $erlebnis->ID );
+              $image_print = $image['sizes']['slide_mobile'];
+              $image_print_2x = $image['sizes']['slide_mobile-2x'];
+            } else {
+              $image = get_field( 'people_image', $erlebnis->ID );
+              $image_print = $image['sizes']['slider-lg'];
+              $image_print_2x = $image['sizes']['slider-lg-2x'];
+            }
             ?>
             <style>
               #overlay_index_<?php echo $overlay_counter; ?> .image_overlay--image.erlebnis_image_<?php echo $erlebnis_counter; ?> {
-                background-image: url("<?php echo $image['sizes']['slider-lg']; ?>");
+                background-image: url("<?php echo $image_print; ?>");
               }
               @media /* only for retina displays */
                 only screen and (min-device-pixel-ratio: 2),
                 only screen and (min-resolution: 192dpi),
                 only screen and (min-resolution: 2dppx) {
                   #overlay_index_<?php echo $overlay_counter; ?> .image_overlay--image.erlebnis_image_<?php echo $erlebnis_counter; ?> {
-                    background-image: url("<?php echo $image['sizes']['slider-lg-2x']; ?>");
+                    background-image: url("<?php echo $image_print_2x; ?>");
                   }
                 }
             </style>
