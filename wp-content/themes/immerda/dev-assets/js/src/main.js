@@ -63,7 +63,6 @@
 
 	var waypoints = $('.js_io_waypoint.start').waypoint(function(direction) {
 		/* direction kann "down" oder "up" sein */
-		console.log(direction);
 		if(direction == 'down') {
 			this.element.classList.add('zoom');
 		} else if(direction == 'up') {
