@@ -71,7 +71,7 @@ if( !empty($block['align']) ) {
         <?php
       } elseif( get_row_layout() == 'video' ) {
         ?>
-        <div class="js_io_waypoint bg_<?php echo $row_index . $add_class; ?>">
+        <div class="js_io_waypoint video bg_<?php echo $row_index . $add_class; ?>">
           <div style="background-color: <?php the_sub_field( 'bg_color' ); ?>;" class="image_overlay--image">
             <div class="id_embed_container">
               <?php the_sub_field( 'video' ); ?>

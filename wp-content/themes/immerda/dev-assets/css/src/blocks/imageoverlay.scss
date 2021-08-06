@@ -21,6 +21,12 @@
       height: 100vh;
     }
   }
+  &.video {
+    height: auto;
+    .image_overlay--image {
+      height: auto;
+    }
+  }
   .image_overlay--txt {
     color: $white;
   }
