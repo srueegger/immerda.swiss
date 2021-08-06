@@ -3,6 +3,7 @@
 	Pace.on('done', function () {
 		setTimeout(function () {
 			$('#main_wrapper').fadeTo('250', 1);
+			AOS.init();
 		}, 0);
 	});
 

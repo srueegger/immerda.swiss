@@ -20,6 +20,7 @@ module.exports = function( grunt ) {
                 src: [
                     'node_modules/bootstrap/dist/js/bootstrap.js',
                     'node_modules/pace-js/pace.js',
+                    'node_modules/aos/dist/aos.js',
                     'dev-assets/js/_vendor/*.js',
                     'dev-assets/js/src/main.js'
                 ],

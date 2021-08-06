@@ -14,7 +14,7 @@ if( !empty($block['align']) ) {
   $className .= ' align' . $block['align'];
 }
 ?>
-<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $className ); ?>">
+<div data-aos="fade-up" id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $className ); ?>">
   <div class="container my-auto">
     <div class="row">
       <div class="col-12">
