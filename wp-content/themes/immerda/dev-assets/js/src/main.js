@@ -61,6 +61,7 @@
 		window.location.href = go_to_url;
 	});
 
+	/* Animationen auf der Startseite auslösen */
 	var waypoints = $('.js_io_waypoint.start').waypoint(function(direction) {
 		/* direction kann "down" oder "up" sein */
 		if(direction == 'down') {
@@ -70,5 +71,12 @@
 		}
 	}, {
 		offset: waypoint_screen_height
+	});
+
+	/* Snap Scrolling aktivieren */
+	$.scrollify({
+		section: '.js_io_waypoint, .textanimation',
+		setHeights: false,
+		scrollSpeed: 750
 	});
 })(jQuery);

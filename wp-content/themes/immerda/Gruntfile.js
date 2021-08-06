@@ -22,6 +22,7 @@ module.exports = function( grunt ) {
                     'node_modules/pace-js/pace.js',
                     'node_modules/aos/dist/aos.js',
                     'node_modules/waypoints/lib/jquery.waypoints.js',
+                    'node_modules/jquery-scrollify/jquery.scrollify.js',
                     'dev-assets/js/_vendor/*.js',
                     'dev-assets/js/src/main.js'
                 ],
