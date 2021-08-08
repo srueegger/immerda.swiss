@@ -32,7 +32,7 @@ if( !empty($block['align']) ) {
           <div style="background-color: <?php the_sub_field( 'bg_color' ); ?>;" class="image_overlay--image">
             <div class="container yx_middle">
               <div class="row">
-                <div class="col-12">
+                <div class="col-11 offset-1 col-lg-12 offset-lg-0">
                   <h2 class="text-center image_overlay--title" style="color: <?php the_sub_field( 'txt_color' ); ?>;"><?php the_sub_field( 'title' ); ?></h2>
                 </div>
               </div>
@@ -68,7 +68,7 @@ if( !empty($block['align']) ) {
           <div class="image_overlay--image image_overlay--txt">
             <div class="container h-100">
               <div class="row h-100">
-                <div class="col-12 align-self-center">
+                <div class="col-11 offset-1 col-lg-12 offset-lg-0 align-self-center">
                   <?php the_sub_field( 'txt' ); ?>
                 </div>
               </div>
@@ -132,7 +132,7 @@ if( !empty($block['align']) ) {
               <div class="image_overlay--image image_overlay--txt erlebnis_image_<?php echo $erlebnis_counter; ?>">
                 <div class="container h-100">
                   <div class="row h-100">
-                    <div class="col-12 col-lg-8 offset-lg-4 align-self-center">
+                    <div class="col-11 offset-1 col-lg-8 offset-lg-4 align-self-center">
                       <h1><?php the_field( 'people_quote', $erlebnis->ID ); ?></h1>
                       <?php the_field( 'people_orga', $erlebnis->ID ); ?>
                       <p><?php echo get_the_title( $erlebnis->ID ); ?> - <?php the_field( 'people_job', $erlebnis->ID ); ?></p>
