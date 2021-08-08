@@ -24,6 +24,7 @@
 	/* Menü Button Klasse nach klick auf aktiv setzen */
 	$('.hamburger').on('click', function() {
 		$(this).toggleClass('is-active');
+		$('#nav_head').toggleClass('set_black');
 		$('#main_menu').toggleClass('show_menu');
 	});
 

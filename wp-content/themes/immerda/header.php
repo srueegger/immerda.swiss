@@ -22,7 +22,7 @@
       }
       ?>
       <header>
-        <nav id="nav_head" class="navbar navbar-toggleable-lg fixed-top">
+        <nav id="nav_head" class="navbar navbar-toggleable-lg fixed-top shadow">
           <div class="container position-relative">
             <a class="navbar-brand" target="_self" href="<?php echo HOME_URI; ?>">
              <span class="id_logo text-white">#<span>immer</span>da</span>
