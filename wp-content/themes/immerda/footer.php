@@ -1,10 +1,19 @@
       </main>
       <footer id="site_footer">
+        <div id="top_footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 text-center text-white">
+                <p class="fw-bold sub_1 mb-0">Für dich. Für alle.</p>
+                <p class="sub_2">Die Einsatz- und Rettungskräfte</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="container">
           <div class="row">
             <div class="col-12">
               <ul id="footer_menu" class="mb-0 text-black">
-                <li class="text-uppercase"><i class="fal fa-copyright me-1"></i>Helfen helfen<sup><i class="fal fa-registered"></i></sup> Schweiz</i></li>
                 <?php
                 /* Footer Menü ausgeben */
                 $locations = get_nav_menu_locations();
