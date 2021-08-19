@@ -25,11 +25,11 @@ if( !empty($block['align']) ) {
   $jobs = get_posts( $args );
   if( !empty( $jobs ) ) {
     /* Jobs ausgeben */
-    echo '<div class="list-group">';
+    echo '<ul class="overview_list">';
     foreach( $jobs as $job ) {
-      echo '<a href="' . get_the_permalink( $job->ID ) . '" target="_self" class="list-group-item">' . get_the_title( $job->ID ) . '</a>';
+      echo '<li><a href="' . get_the_permalink( $job->ID ) . '" class="fw-bold" target="_self">' . get_the_title( $job->ID ) . '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-long-arrow-right fa-stack-1x fa-inverse"></i></span></a></li>';
     }
-    echo '</div>';
+    echo '</ul>';
   } else {
     /* Keine Jobs vorhanden - Info ausgeben */
     echo '<h3>' . get_field( 'block_jobs_none' ) . '</h3>';

@@ -1,5 +1,5 @@
 /* Gutenberg Colors */
-$gutenberg-colors: ("black": #000000, 'red': #8b0500, 'gray': #757575);
+$gutenberg-colors: ("black": #000000, 'red': #8b0500, 'gray': #757575, 'white': #ffffff);
 @each $color, $value in $gutenberg-colors {
   .has-#{$color}-color {
     color: $value;

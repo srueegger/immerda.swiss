@@ -15,6 +15,7 @@ define( 'DIST_JS', THEME_URI . '/dist-assets/js' );
  * Include helpers (post types, taxonomies, metaboxes etc.)
  ***************************************/
 require_once 'inc/custom-blocks.php';
+require_once 'inc/custom-shortcodes.php';
 
 /***************************************
  * Bildgrössen definieren
@@ -131,7 +132,12 @@ function id_gutenberg_colors_support() {
 			'name'  => esc_html__( 'Grau', 'id_theme' ),
 			'slug'  => 'gray',
 			'color' => '#757575'
-		)
+		),
+		array(
+			'name'  => esc_html__( 'Weiss', 'id_theme' ),
+			'slug'  => 'white',
+			'color' => '#ffffff'
+		),
 	) );
 }
 add_action( 'after_setup_theme', 'id_gutenberg_colors_support' );
@@ -153,3 +159,11 @@ function id_custom_lng_switch() {
 		echo '</ul></div>';
 	}
 }
+
+/***************************************
+ * Benutzerdefinierte Gutenberg Filters - JavaScript
+ ***************************************/
+function id_enqueue_block_editor_assets() {
+	wp_enqueue_script( 'block-filters', DIST_JS . '/block-filters.js', array( 'wp-hooks' ), '1.0.0', true );
+}
+add_action( 'enqueue_block_editor_assets', 'id_enqueue_block_editor_assets' );
