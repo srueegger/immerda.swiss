@@ -15,17 +15,17 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Dieser Block zeigt alle offenen Jobs an.\r\nEs werden nur Jobs angezeigt die als Unterseite dieser Seite definiert sind.",
+            "wpml_cf_preferences": 0,
+            "message": "Dieser Block zeigt alle Unterseiten an.\r\nEs werden nur Inhalte angezeigt die als Unterseite dieser Seite definiert sind.",
             "new_lines": "wpautop",
-            "esc_html": 0,
-            "wpml_cf_preferences": 0
+            "esc_html": 0
         },
         {
             "key": "field_60e0ad8402fe6",
-            "label": "Keine Jobs",
+            "label": "Keine Unterseiten",
             "name": "block_jobs_none",
             "type": "textarea",
-            "instructions": "Text der angezeigt werden soll, wenn keine Jobs verfügbar sind.",
+            "instructions": "Text der angezeigt werden soll, wenn keine Unterseiten verfügbar sind.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -33,12 +33,12 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
             "default_value": "",
             "placeholder": "",
             "maxlength": "",
             "rows": 4,
             "new_lines": "br",
-            "wpml_cf_preferences": 0,
             "acfe_textarea_code": 0
         }
     ],
@@ -66,5 +66,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1625337265
+    "modified": 1629385947
 }

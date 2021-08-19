@@ -68,8 +68,8 @@
   right: -100%;
   width: 100%;
   height: calc(100vh - 80px);
-  background: rgb(104,3,240);
-  background: linear-gradient(67deg, rgba(104,3,240,1) 17%, rgba(221,14,44,0.9878151944371498) 86%);
+  background: rgb(156,40,50);
+  background: linear-gradient(67deg, rgba(156,40,50,1) 17%, rgba(0,53,177,0.9878151944371498) 86%);
   transition: all .5s;
   z-index: $zindex-tooltip;
   &:before {

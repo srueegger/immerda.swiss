@@ -1,0 +1,17 @@
+.press_list {
+  li {
+    padding: 25px 15px;
+    border: none;
+    background-color: $gray-200;
+    &:not(:last-of-type) {
+      margin-bottom: 15px;
+    }
+    a {
+      color: $blue;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
