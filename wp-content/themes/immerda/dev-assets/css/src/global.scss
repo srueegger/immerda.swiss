@@ -80,19 +80,6 @@ button {
 #site_main {
   min-height: calc(100vh - 80px - 25px);
   position: relative;
-  &.special_background {
-    &:before {
-      content: '';
-      width: 30%;
-      height: calc(100% + 25px);
-      background: $gray-900;
-      position: absolute;
-      right: -200px;
-      top: -25px;
-      transform: skew(-20deg);
-      z-index: -1;
-    }
-  }
 }
 
 .morphext > .animated {

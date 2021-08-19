@@ -67,11 +67,4 @@
         wp_nav_menu( $args );
         ?>
       </div>
-      <?php
-      /* Prüfen ob die Seite einen speziellen Hintergrund haben soll */
-      $add_background_class = '';
-      if( get_field( 'page_background', get_queried_object_id() ) ) {
-        $add_background_class = ' class="special_background"';
-      }
-      ?>
-      <main id="site_main"<?php echo $add_background_class; ?>>
+      <main id="site_main">
