@@ -28,9 +28,25 @@
     min-height: 100vh;
     padding-top: 25px;
     padding-bottom: 25px;
+    &.youtube {
+      p {
+        position:relative;
+        padding-bottom:56.25%;
+        padding-top:30px;
+        height:0;
+        overflow:hidden;
+        iframe {
+          position:absolute;
+          top:0;
+          left:0;
+          width:100%;
+          height:100%;
+        }
+      }
+    }
   }
   @include media-breakpoint-up(lg) {
-    #people_content {
+    #people_content:not(.youtube) {
       &>div {
         &>div {
           columns: 2;

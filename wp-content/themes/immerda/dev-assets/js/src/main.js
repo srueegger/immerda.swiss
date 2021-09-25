@@ -10,6 +10,12 @@
 		}, 0);
 	});
 
+	/* Prüfen ob eine Seite ein iframe enthält */
+	if( $('iframe').length ) {
+		/* eien Klasse zum Content Container hinzufügen */
+		$('#people_content').addClass('youtube');
+	}
+
 	/* Funktionen beim scrollen ausführen */
 	$(window).on('scroll', function() {
 		var scroll = $(window).scrollTop();
