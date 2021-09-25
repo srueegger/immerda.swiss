@@ -43,6 +43,24 @@
             "max": "",
             "step": "",
             "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_614f0bef94610",
+            "label": "Hintergrundfarbe der Seite",
+            "name": "page_bg_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ffffff",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "wpml_cf_preferences": 0
         }
     ],
     "location": [
@@ -69,5 +87,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1629375546
+    "modified": 1632570389
 }

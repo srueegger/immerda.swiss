@@ -6,7 +6,14 @@
     <?php wp_head(); ?>
     <script src="https://kit.fontawesome.com/402771fbad.js" crossorigin="anonymous"></script>
   </head>
-  <body <?php body_class(); ?>>
+  <?php
+  /* Hintergrundfarbe der Seite definieren */
+  $page_bg_color = get_field( 'page_bg_color', get_queried_object_id() );
+  if( empty( $page_bg_color ) ) {
+    $page_bg_color = '#ffffff';
+  }
+  ?>
+  <body <?php body_class(); ?> style="background-color: <?php echo $page_bg_color; ?>">
     <div id="main_wrapper">
       <?php
       $scroll_nav_menu_id = get_field( 'page_has_scrollnav', get_queried_object_id() );
