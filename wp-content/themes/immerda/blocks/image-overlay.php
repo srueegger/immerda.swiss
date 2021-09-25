@@ -50,6 +50,8 @@ if( !empty($block['align']) ) {
           $image_print = $image['sizes']['slider-lg'];
           $image_print_2x = $image['sizes']['slider-lg-2x'];
         }
+        $image_print = $image['url'];
+        $image_print_2x = $image['url'];
         ?>
         <style>
           #overlay_index_<?php echo $overlay_counter; ?> .image_overlay--image {
@@ -109,10 +111,14 @@ if( !empty($block['align']) ) {
               $image = get_field( 'people_image_mobile', $erlebnis->ID );
               $image_print = $image['sizes']['slide_mobile'];
               $image_print_2x = $image['sizes']['slide_mobile-2x'];
+              $image_print = $image['url'];
+              $image_print_2x = $image['url'];
             } else {
               $image = get_field( 'people_image', $erlebnis->ID );
               $image_print = $image['sizes']['slider-lg'];
               $image_print_2x = $image['sizes']['slider-lg-2x'];
+              $image_print = $image['url'];
+              $image_print_2x = $image['url'];
             }
             ?>
             <style>
