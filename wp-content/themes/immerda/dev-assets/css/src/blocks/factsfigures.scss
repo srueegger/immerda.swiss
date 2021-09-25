@@ -1,0 +1,47 @@
+.factsfigures {
+  position: relative;
+  &--toptitle {
+    margin-bottom: -5px;
+  }
+  &--title {
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  &--text {
+    margin-bottom: 25px;
+    p {
+      font-weight: 300;
+    }
+  }
+  &--clock {
+    width: 100%;
+    text-align: center;
+    p {
+      font-weight: 700;
+      margin-bottom: 0;
+      margin-top: 25px;
+      font-size: 1.25rem;
+    }
+    svg {
+      width: 225px;
+      height: 225px;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &--clock {
+      position: absolute;
+      right: 50%;
+      bottom: 50%;
+      transform: translate(50%, 50%);
+      svg {
+        width: 275px;
+        height: 275px;
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    &--title {
+      font-size: 1.85rem;
+    }
+  }
+}

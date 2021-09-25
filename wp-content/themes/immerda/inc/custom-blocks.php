@@ -156,5 +156,37 @@ if( function_exists('acf_register_block_type') ):
       'anchor' => false,
     ),
   ));
+
+  acf_register_block_type(array(
+    'name' => 'facts_and_figures',
+    'title' => 'Zahlen und Fakten',
+    'description' => 'Zeigt die Zahlen und Fakten mit einer animierten Uhr',
+    'category' => 'widgets',
+    'keywords' => array(
+      0 => 'zahlen',
+      1 => 'fakten',
+      2 => 'uhr'
+    ),
+    'post_types' => array(
+      0 => 'page',
+    ),
+    'mode' => 'edit',
+    'align' => '',
+    'align_content' => NULL,
+    'render_template' => 'blocks/factsfigures.php',
+    'render_callback' => '',
+    'enqueue_style' => '',
+    'enqueue_script' => '',
+    'enqueue_assets' => '',
+    'icon' => 'info-outline',
+    'supports' => array(
+      'align' => false,
+      'mode' => true,
+      'multiple' => true,
+      'jsx' => false,
+      'align_content' => false,
+      'anchor' => false,
+    ),
+  ));
   
   endif;
