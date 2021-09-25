@@ -125,7 +125,7 @@ if( !empty($block['align']) ) {
       setTime(date.getHours(), date.getMinutes(), date.getSeconds());
       </script>
     </svg>
-    <p>Rund um die Uhr für euch da!</p>
+    <p><?php the_field( 'block_fact_clock' ); ?></p>
   </div>
   <?php
   if( have_rows( 'block_fact_figures' ) ) {
