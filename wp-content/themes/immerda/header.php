@@ -9,11 +9,16 @@
   <?php
   /* Hintergrundfarbe der Seite definieren */
   $page_bg_color = get_field( 'page_bg_color', get_queried_object_id() );
-  if( empty( $page_bg_color ) ) {
-    $page_bg_color = '#ffffff';
+  $page_background = '';
+  if( is_page() ) {
+    if( empty( $page_bg_color ) ) {
+      $page_background = ' style="background: #fff;"';
+    } else {
+      $page_background = ' style="background: ' . $page_bg_color . ';"';
+    }
   }
   ?>
-  <body <?php body_class(); ?> style="background-color: <?php echo $page_bg_color; ?>">
+  <body <?php body_class(); ?><?php echo $page_background; ?>>
     <div id="main_wrapper">
       <?php
       $scroll_nav_menu_id = get_field( 'page_has_scrollnav', get_queried_object_id() );
