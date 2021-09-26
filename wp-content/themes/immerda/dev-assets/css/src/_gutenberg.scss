@@ -23,3 +23,18 @@ $gutenberg-colors: ("black": #000000, 'red': #8b0500, 'gray': #757575, 'white': 
 .wp-block-embed {
   margin-bottom: 0;
 }
+
+.quote_img {
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 100%;
+  }
+}
+
+.wp-block-quote {
+  @extend .blockquote;
+  cite {
+    @extend .blockquote-footer;
+  }
+}
