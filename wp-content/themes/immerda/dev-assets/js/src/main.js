@@ -1,6 +1,8 @@
 (function ($) {
 	/* Globale Variabeln */
 	var waypoint_screen_height = calculate_half_screenheight();
+	var team_original_image = '';
+	var team_original_image_alt = '';
 
 	/* Pace initalisieren */
 	Pace.on('done', function () {
@@ -134,4 +136,40 @@
 		var half_screen_height = screen.height / 2 - 80;
 		return half_screen_height;
 	}
+
+	/* Team-Übersicht Hover Effekt */
+	$('.teamoverview--container.hover_effect').on({
+		mouseenter: function () {
+			/* Aktion bei Mouseover */
+			var img = $(this).find('img');
+			var name = $(this).find('.teamoverview--name');
+			/* Daten vom Bild in globale Variabel speichern */
+			team_original_image = img.prop('src');
+			team_original_image_alt = img.prop('alt');
+			/* Bild ändern */
+			var new_image_src = img.data('secondimage');
+			var new_image_alt = img.data('secondalt');
+			img.prop('src', new_image_src);
+			img.prop('alt', new_image_alt);
+			name.addClass('show');
+    },
+		mouseleave: function () {
+			/* Aktion bei Mouseleave */
+			var img = $(this).find('img');
+			var name = $(this).find('.teamoverview--name');
+			/* Bild wieder zurücksetzen */
+			img.prop('src', team_original_image);
+			img.prop('alt', team_original_image_alt);
+			name.removeClass('show');
+    }
+	});
+
+	/* Team-Übersicht Klick Effekt */
+	$('.teamoverview--container').on('click', function() {
+		/* Alle Boxen entfernen */
+		$('.teamoverview--content').removeClass('show');
+		/* Box bei geklicktem Element hinzufügen */
+		var content = $(this).find('.teamoverview--content');
+		content.addClass('show');
+	});
 })(jQuery);

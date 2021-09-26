@@ -188,5 +188,37 @@ if( function_exists('acf_register_block_type') ):
       'anchor' => false,
     ),
   ));
+
+  acf_register_block_type(array(
+    'name' => 'team_overview',
+    'title' => 'Team Übersicht',
+    'description' => 'Zeigt die Übersicht der Teammitglieder an',
+    'category' => 'widgets',
+    'keywords' => array(
+      0 => 'team',
+      1 => 'mitarbeiter',
+      2 => 'übersicht'
+    ),
+    'post_types' => array(
+      0 => 'page',
+    ),
+    'mode' => 'edit',
+    'align' => '',
+    'align_content' => NULL,
+    'render_template' => 'blocks/teamoverview.php',
+    'render_callback' => '',
+    'enqueue_style' => '',
+    'enqueue_script' => '',
+    'enqueue_assets' => '',
+    'icon' => 'info-outline',
+    'supports' => array(
+      'align' => false,
+      'mode' => true,
+      'multiple' => true,
+      'jsx' => false,
+      'align_content' => false,
+      'anchor' => false,
+    ),
+  ));
   
   endif;
