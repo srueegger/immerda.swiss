@@ -23,6 +23,9 @@ body {
   cite {
     text-decoration: underline;
     text-decoration-thickness: 4px;
+    &.big {
+      text-decoration-thickness: 7px;
+    }
   }
   &:not(.no_font_size) {
     font-size: 1.2rem;
