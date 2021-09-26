@@ -2,6 +2,13 @@
 get_header();
 if ( have_posts() ) : while ( have_posts() ) : the_post();
   $image = get_field( 'people_image_detail' );
+  if( get_field( 'people_position' ) ) {
+    /* Inhalt ist rechts positioniert */
+    $offset_lg = 'offset-lg-7';
+  } else {
+    /* Inhalt ist links positioniert */
+    $offset_lg = '';
+  }
   ?>
   <div class="people_content">
     <picture>
@@ -10,7 +17,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
     <div class="people_content--imagecontent">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-lg-5 <?php echo $offset_lg; ?>">
             <h1>«
             <?php
             $quote = get_field( 'people_quote_2' );

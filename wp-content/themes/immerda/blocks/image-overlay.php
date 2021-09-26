@@ -120,6 +120,15 @@ if( !empty($block['align']) ) {
               $image_print = $image['url'];
               $image_print_2x = $image['url'];
             }
+            if( get_field( 'people_position', $erlebnis->ID ) ) {
+              /* Inhalte werden auf dem Desktop rechts positioniert */
+              $background_class = 'right_content';
+              $offset_lg = 'offset-lg-8';
+            } else {
+              /* Inhalte werden auf dem Desktop links positioniert */
+              $background_class = 'left_content';
+              $offset_lg = 'offset-lg-0';
+            }
             ?>
             <style>
               #overlay_index_<?php echo $overlay_counter; ?> .image_overlay--image.erlebnis_image_<?php echo $erlebnis_counter; ?> {
@@ -136,13 +145,15 @@ if( !empty($block['align']) ) {
             </style>
             <div id="overlay_index_<?php echo $overlay_counter; ?>" class="js_io_waypoint bg_<?php echo $row_index . $add_class; ?>">
               <div class="image_overlay--image image_overlay--txt erlebnis_image_<?php echo $erlebnis_counter; ?>">
-                <div class="container h-100">
-                  <div class="row h-100">
-                    <div class="col-11 offset-1 col-lg-8 offset-lg-4 align-self-center">
-                      <h1><?php the_field( 'people_quote', $erlebnis->ID ); ?></h1>
-                      <?php the_field( 'people_orga', $erlebnis->ID ); ?>
-                      <p><?php echo get_the_title( $erlebnis->ID ); ?> - <?php the_field( 'people_job', $erlebnis->ID ); ?></p>
-                      <button type="button" data-href="<?php echo get_the_permalink( $erlebnis->ID ); ?>" class="btn btn-outline-light js_goto"><?php the_field( 'people_btn', $erlebnis->ID ); ?></button>
+                <div class="<?php echo $background_class; ?>">
+                  <div class="container position-relative h-100">
+                    <div class="row h-100">
+                      <div class="col-11 offset-1 col-lg-4 <?php echo $offset_lg; ?> align-self-end mb-40">
+                        <h1 class="mb-5"><?php the_field( 'people_quote', $erlebnis->ID ); ?></h1>
+                        <?php the_field( 'people_orga', $erlebnis->ID ); ?>
+                        <p class="my-lg-4"><?php echo get_the_title( $erlebnis->ID ); ?> - <?php the_field( 'people_job', $erlebnis->ID ); ?></p>
+                        <button type="button" data-href="<?php echo get_the_permalink( $erlebnis->ID ); ?>" class="btn btn-outline-light btn-lg js_goto"><?php the_field( 'people_btn', $erlebnis->ID ); ?></button>
+                      </div>
                     </div>
                   </div>
                 </div>
