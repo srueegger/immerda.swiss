@@ -3,6 +3,23 @@
     "title": "Einstellungen für die #IMMERDA Webseite",
     "fields": [
         {
+            "key": "field_6150a9e3a5309",
+            "label": "Systemseiten",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "wpml_cf_preferences": 1
+        },
+        {
             "key": "field_60e0914b54979",
             "label": "Solidarisieren Seite",
             "name": "sys_soli_page",
@@ -29,6 +46,63 @@
                 "acfe_bidirectional_enabled": "0"
             },
             "ui": 1
+        },
+        {
+            "key": "field_6150a9f7a530a",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "wpml_cf_preferences": 1
+        },
+        {
+            "key": "field_6150aa01a530b",
+            "label": "Text Zeile 1",
+            "name": "sys_footer_line_1",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6150aa13a530c",
+            "label": "Text Zeile 2",
+            "name": "sys_footer_line_2",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -55,5 +129,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1629383273
+    "modified": 1632676388
 }
