@@ -12,12 +12,6 @@
 		}, 0);
 	});
 
-	/* Prüfen ob eine Seite ein iframe enthält */
-	if( $('iframe').length ) {
-		/* eien Klasse zum Content Container hinzufügen */
-		$('#people_content').addClass('youtube');
-	}
-
 	/* Funktionen beim scrollen ausführen */
 	$(window).on('scroll', function() {
 		var scroll = $(window).scrollTop();
@@ -129,7 +123,11 @@
 	$('.js_scroll_nav').on('click', function(event) {
 		event.preventDefault();
 		var go_to = $(this).prop('href');
-		$.scrollify.move(go_to.substring(go_to.indexOf('#')));
+		if(go_to.indexOf('#') != -1) {
+			$.scrollify.move(go_to.substring(go_to.indexOf('#')));
+		} else {
+			window.location.href = go_to;
+		}
 	});
 
 	function calculate_half_screenheight() {

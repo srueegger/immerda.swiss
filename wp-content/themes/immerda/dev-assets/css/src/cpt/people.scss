@@ -7,7 +7,7 @@
   }
   &--imagecontent {
     position: absolute;
-    top: calc(100vh - 350px);
+    top: calc(100vh - 400px);
     width: 100%;
   }
   &--scrolldown {
@@ -41,15 +41,6 @@
           left:0;
           width:100%;
           height:100%;
-        }
-      }
-    }
-  }
-  @include media-breakpoint-up(lg) {
-    #people_content:not(.youtube) {
-      &>div {
-        &>div {
-          columns: 2;
         }
       }
     }

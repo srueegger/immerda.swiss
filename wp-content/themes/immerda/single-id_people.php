@@ -2,7 +2,7 @@
 get_header();
 if ( have_posts() ) : while ( have_posts() ) : the_post();
   $image = get_field( 'people_image_detail' );
-  if( get_field( 'people_position' ) ) {
+  if( get_field( 'people_position_2' ) ) {
     /* Inhalt ist rechts positioniert */
     $offset_lg = 'offset-lg-7';
   } else {
@@ -38,8 +38,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
       </span>
     </div>
     <div id="people_content" class="container position-relative">
-      <div class="row">
-        <div class="col-12">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
           <?php the_field( 'people_txt' ); ?>
         </div>
       </div>

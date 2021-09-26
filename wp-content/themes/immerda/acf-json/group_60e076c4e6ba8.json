@@ -20,6 +20,26 @@
             "wpml_cf_preferences": 0
         },
         {
+            "key": "field_6150b7835f233",
+            "label": "Inhaltposition Übersicht",
+            "name": "people_position",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Rechts",
+            "ui_off_text": "Links"
+        },
+        {
             "key": "field_60e076e202a2e",
             "label": "Bild auf der Übersicht",
             "name": "people_image",
@@ -172,6 +192,26 @@
             "wpml_cf_preferences": 0
         },
         {
+            "key": "field_6150cee9d76fd",
+            "label": "Inhaltposition Detail",
+            "name": "people_position_2",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Rechts",
+            "ui_off_text": "Links"
+        },
+        {
             "key": "field_60e1952ed7484",
             "label": "Bild auf der Detailseite",
             "name": "people_image_detail",
@@ -291,5 +331,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1625424356
+    "modified": 1632685824
 }
