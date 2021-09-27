@@ -9,6 +9,7 @@
 		setTimeout(function () {
 			$('#main_wrapper').fadeTo('250', 1);
 			AOS.init();
+			run_text_animation();
 		}, 0);
 	});
 
@@ -42,21 +43,23 @@
 		)}, 'slow');
 	});
 
-	/* Texte animieren */
-	var count_elements = $('.text-rotating').text().split('|').length - 1;
-	var text_rotating = $('.text-rotating');
-	text_rotating.Morphext({
-		animation: "flipInX",
-		separator: "|",
-		speed: text_rotating.data('speed'),
-		complete: function () {
-			if(this.index == count_elements) {
-				$('.textanimation h2.dynamic').addClass('d-none');
-				$('.textanimation h2.static').removeClass('d-none');
-				$('.text-rotating-container').remove();
+	function run_text_animation() {
+		/* Texte animieren */
+		var count_elements = $('.text-rotating').text().split('|').length - 1;
+		var text_rotating = $('.text-rotating');
+		text_rotating.Morphext({
+			animation: "flipInX",
+			separator: "|",
+			speed: text_rotating.data('speed'),
+			complete: function () {
+				if(this.index == count_elements) {
+					$('.textanimation h2.dynamic').addClass('d-none');
+					$('.textanimation h2.static').removeClass('d-none');
+					$('.text-rotating-container').remove();
+				}
 			}
-		}
-	});
+		});
+	}
 
 	/* Link per JS öffnen */
 	$('.js_goto').on('click', function() {
