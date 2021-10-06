@@ -26,7 +26,6 @@ if( !empty($block['align']) ) {
       <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="me-auto"><?php the_sub_field( 'text' ); ?></div>
         <div><a href="<?php echo $link['url']; ?>" target="<?php echo $link_target; ?>"><?php echo $link['title']; ?></a></div>
-        <!-- <span class="badge bg-primary rounded-pill">14</span> -->
       </li>
       <?php
     }
