@@ -27,21 +27,7 @@
     <div id="main_wrapper">
       <?php
       /* Sidebar Menü anzeigen, falls eines konfiguriert wurde */
-      $scroll_nav_menu_id = get_field( 'page_has_scrollnav', get_queried_object_id() );
-      if( !empty( $scroll_nav_menu_id ) ) {
-        $scroll_items = wp_get_nav_menu_items( $scroll_nav_menu_id );
-        if( !empty( $scroll_items ) ) {
-          echo '<ul class="side_btns list-unstyled">';
-          foreach( $scroll_items as $item ) {
-            $color = '';
-            if( get_field( 'menu_color', $item ) ) {
-              $color = ' class="red"';
-            }
-            echo '<li' . $color . '><a class="js_scroll_nav" href="' . esc_url( $item->url ) . '">' . esc_attr( $item->title ) . '</a></li>';
-          }
-          echo '</ul>';
-        }
-      }
+      get_sidebar( 'sidemenu' );
       ?>
       <header>
         <nav id="nav_head" class="navbar navbar-toggleable-lg fixed-top shadow">
@@ -83,8 +69,7 @@
           'menu_id' => 'immerda_nav_list',
           'fallback_cb' => '__return_false',
           'items_wrap' => '<ul id="%1$s" class="navbar-nav mx-auto mb-2 mb-lg-0 %2$s">%3$s</ul>',
-          'depth' => 2,
-          //'walker' => new bootstrap_5_wp_nav_menu_walker()
+          'depth' => 2
         );
         wp_nav_menu( $args );
         ?>
