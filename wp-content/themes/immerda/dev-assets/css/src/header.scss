@@ -158,5 +158,16 @@
         font-size: .85rem;
       }
     }
+    &.red {
+      background-color: $red;
+      &:hover,
+      &.active {
+        background-color: $black;
+        border-color: $red;
+        a {
+          color: $white;
+        }
+      }
+    }
   }
 }
