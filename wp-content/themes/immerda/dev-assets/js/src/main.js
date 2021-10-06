@@ -3,6 +3,7 @@
 	var waypoint_screen_height = calculate_half_screenheight();
 	var team_original_image = '';
 	var team_original_image_alt = '';
+	var body = $('body');
 
 	/* Pace initalisieren */
 	Pace.on('done', function () {
@@ -10,6 +11,7 @@
 			$('#main_wrapper').fadeTo('250', 1);
 			AOS.init();
 			run_text_animation();
+			search_team_iframes();
 		}, 0);
 	});
 
@@ -173,4 +175,14 @@
 		var content = $(this).find('.teamoverview--content');
 		content.addClass('show');
 	});
+
+	/* Falls ein iFrame auf einer Teamseite ein Responsive Embed hinzufügen*/
+	function search_team_iframes() {
+		if(body.hasClass('id_people-template-default')) {
+			var iframe = $('iframe');
+			if(iframe.length) {
+				iframe.parent().addClass('id_embed_container');
+			}
+		}
+	}
 })(jQuery);
