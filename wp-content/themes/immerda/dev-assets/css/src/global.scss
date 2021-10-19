@@ -194,3 +194,13 @@ button {
   font-family: 'Secular One', sans-serif;
   font-weight: 400;
 }
+
+.img_effect {
+  overflow: hidden;
+  img {
+    transition: transform .5s;
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+}
