@@ -38,3 +38,13 @@ $gutenberg-colors: ("black": #000000, 'red': #8b0500, 'gray': #757575, 'white': 
     @extend .blockquote-footer;
   }
 }
+
+.has-white-color {
+  a {
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
