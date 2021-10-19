@@ -5,7 +5,7 @@
             <div class="row">
               <div class="col-12 text-center text-white">
                 <p class="fw-bold sub_1 mb-0"><?php the_field( 'sys_footer_line_1', 'option' ); ?></p>
-                <p class="sub_2"><?php the_field( 'sys_footer_line_1', 'option' ); ?></p>
+                <p class="sub_2"><?php the_field( 'sys_footer_line_2', 'option' ); ?></p>
               </div>
             </div>
           </div>
