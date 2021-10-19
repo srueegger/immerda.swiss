@@ -18,15 +18,16 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
       <div class="container">
         <div class="row">
           <div class="col-12 col-lg-5 <?php echo $offset_lg; ?>">
-            <h1>«
+            <h1>
             <?php
             $quote = get_field( 'people_quote_2' );
+            echo '<span class="font_quote">&bdquo;</span>';
             if( empty( $quote ) ) {
               $quote = get_field( 'people_quote' );
             }
             echo $quote;
-            ?>
-            »</h1>
+            echo '<span class="font_quote">&ldquo;</span>';
+            ?></h1>
             <p class="mt-4"><?php the_title(); ?> - <?php the_field( 'people_job' ); ?></p>
           </div>
         </div>

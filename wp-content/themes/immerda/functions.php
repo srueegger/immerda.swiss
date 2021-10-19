@@ -43,16 +43,15 @@ function immerda_scripts() {
 	$js_depend = array(
 		'jquery'
 	);
-	wp_enqueue_style( 'immerda-google-fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap', array() );
 	if ( WP_DEBUG ) {
 		$modificated_css = date( 'YmdHis', filemtime( get_stylesheet_directory() . '/dev-assets/css/theme.css' ) );
 		$modificated_js = date( 'YmdHis', filemtime( get_stylesheet_directory() . '/dev-assets/js/theme.js' ) );
-		wp_enqueue_style( 'immerda-style', DEV_CSS . '/theme.css', array( 'immerda-google-fonts' ), $modificated_css );
+		wp_enqueue_style( 'immerda-style', DEV_CSS . '/theme.css', array(), $modificated_css );
 		wp_register_script( 'immerda-script', DEV_JS . '/theme.js', $js_depend, $modificated_js, true );
 	} else {
 		$modificated_css = date( 'YmdHis', filemtime( get_stylesheet_directory() . '/dist-assets/css/theme.min.css' ) );
 		$modificated_js = date( 'YmdHis', filemtime( get_stylesheet_directory() . '/dist-assets/js/theme.min.js' ) );
-		wp_enqueue_style( 'immerda-style', DIST_CSS . '/theme.min.css', array( 'immerda-google-fonts' ), $modificated_css );
+		wp_enqueue_style( 'immerda-style', DIST_CSS . '/theme.min.css', array(), $modificated_css );
 		wp_register_script( 'immerda-script', DIST_JS . '/theme.min.js', $js_depend, $modificated_js, true );
 	}
 	$bingo_vars = array(

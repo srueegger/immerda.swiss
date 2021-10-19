@@ -8,6 +8,9 @@
         eventLag: false
       };
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Secular+One&display=swap" rel="stylesheet"> 
     <?php wp_head(); ?>
     <script src="https://kit.fontawesome.com/402771fbad.js" crossorigin="anonymous"></script>
   </head>
