@@ -10,7 +10,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
     $offset_lg = '';
   }
   ?>
-  <div class="people_content">
+  <div class="people_content position-relative">
     <picture>
       <img class="people_content--image" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>">
     </picture>
@@ -33,9 +33,9 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
         </div>
       </div>
     </div>
-    <div class="people_content--scrolldown">
-      <span class="js_scroll_to" data-scrollto="#people_content" role="button">
-        <i class="fas fa-arrow-circle-down"></i>
+    <div class="people_content--scrolldown w-100">
+      <span class="js_scroll_to no_offset" data-scrollto="#people_content" role="button">
+        <i class="fas fa-arrow-circle-down fa-fw"></i>
       </span>
     </div>
     <div id="people_content" class="container position-relative">

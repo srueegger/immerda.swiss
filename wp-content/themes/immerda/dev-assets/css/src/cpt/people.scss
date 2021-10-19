@@ -1,23 +1,23 @@
 .people_content {
   &--image {
     width: 100%;
-    height: calc(100vh - 80px);
+    height: 100vh;
     object-fit: cover;
     object-position: center top;
   }
   &--imagecontent {
     position: absolute;
-    top: calc(100vh - 400px);
+    top: calc(100vh - 480px);
     width: 100%;
   }
   &--scrolldown {
     height: 80px;
     text-align: center;
-    position: relative;
+    position: absolute;
+    top: calc(100vh - 80px);
     span {
-      position: absolute;
-      bottom: 50%;
-      transform: translateY(50%);
+      position: relative;
+      bottom: -20px;
       svg {
         @include font-size(2.5rem);
         color: $white;
