@@ -181,8 +181,25 @@
 		if(body.hasClass('id_people-template-default')) {
 			var iframe = $('iframe');
 			if(iframe.length) {
-				iframe.parent().addClass('id_embed_container');
+				$('#people_content').removeClass('container');
+				iframe.parent().parent().parent().removeClass('row');
+				iframe.parent().addClass('id_embed_container').addClass('absolute_container');
+				/* Höhe vom iframe ermitteln */
+				correct_frame_embed_size();
 			}
 		}
 	}
+
+	/* Da iframe absolut positioniert wird, muss die Höhe vom Content Container an das iframe nagepasst werden, damit der Footer nicht verdeckt wird. */
+	function correct_frame_embed_size() {
+		var iframe = $('iframe');
+		if(iframe.length) {
+			var frame_height = iframe.outerHeight();
+			$('#people_content').css('height', frame_height);
+		}
+	}
+
+	$( window ).resize(function() {
+		correct_frame_embed_size();
+	});
 })(jQuery);

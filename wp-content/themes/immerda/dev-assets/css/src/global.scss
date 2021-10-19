@@ -103,6 +103,10 @@ button {
   overflow: hidden;
   max-width: 100%;
   height: auto;
+  &.absolute_container {
+    position: absolute;
+    width: 100%;
+  }
   iframe,
   object,
   embed {
