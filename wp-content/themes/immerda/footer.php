@@ -13,7 +13,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <ul id="footer_menu" class="mb-0 text-black">
+              <ul id="footer_menu" class="mb-0 text-white">
                 <?php
                 /* Footer Menü ausgeben */
                 $locations = get_nav_menu_locations();
@@ -22,7 +22,7 @@
                 if( !empty( $footer_menu ) ) {
                   foreach( $footer_menu as $menu_item ) {
                     $link_target = $menu_item->target ? $menu_item->target : '_self';
-                    echo '<li class="text-uppercase"><a class="text-decoration-none" href="' . esc_url( $menu_item->url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_attr( $menu_item->title ) . '</a></li>';
+                    echo '<li class="text-uppercase"><a class="text-decoration-none text-white" href="' . esc_url( $menu_item->url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_attr( $menu_item->title ) . '</a></li>';
                   }
                 }
                 ?>

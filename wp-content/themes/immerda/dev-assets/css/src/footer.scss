@@ -1,7 +1,7 @@
 #site_footer {
   font-weight: 300;
   min-height: 50px;
-  background: $gray-700;
+  background: $black;
 }
 
 #footer_menu {
@@ -24,7 +24,6 @@
 }
 
 #top_footer {
-  background-color: $black;
   padding: 75px 0;
   .sub_1 {
     @include font-size(3rem);
