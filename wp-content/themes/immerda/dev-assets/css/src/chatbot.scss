@@ -5,26 +5,33 @@
   bottom: 25px;
   background: $white;
   border: 1px solid $black;
-  width: 75px;
-  height: 75px;
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
   animation: show_chatbot 1s linear 1.5s forwards;
   visibility: hidden;
   svg {
     color: $black;
-    font-size: 2.2rem;
+    font-size: 1.65rem;
     position: absolute;
     right: 50%;
     bottom: 50%;
     transform: translate(50%, 50%);
+  }
+  @include media-breakpoint-up(lg) {
+    width: 75px;
+    height: 75px;
+    svg {
+      font-size: 2.2rem;
+    }
   }
 }
 
 .chatbot_chat {
   position: fixed;
   right: 50px;
-  width: 400px;
-  bottom: 125px;
+  width: 250px;
+  bottom: 95px;
   visibility: hidden;
   opacity: 0;
   transition: opacity .5s;
@@ -33,30 +40,30 @@
     opacity: 1;
   }
   &--header {
-    height: 50px;
+    height: 40px;
     background: $black;
-    padding: 10px;
+    padding: 5px;
     &--close {
       position: absolute;
       right: 10px;
       bottom: 50%;
       transform: translateY(50%);
       svg {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
       }
     }
   }
   &--body {
-    height: 450px;
+    height: 375px;
     background: $white;
     overflow-y: scroll;
     &--inner {
-      padding: 15px;
+      padding: 7px;
       display: flex;
       flex-direction: column;
       height: 100%;
       .bot_message {
-        padding-bottom: 25px;
+        padding-bottom: 15px;
         &:first-of-type {
           margin-top: auto;
         }
@@ -81,6 +88,28 @@
           background: $white;
           width: 100%;
           padding: 10px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    width: 400px;
+    bottom: 125px;
+    &--header {
+      height: 50px;
+      padding: 10px;
+      &--close {
+        svg {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    &--body {
+      height: 450px;
+      &--inner {
+        padding: 15px;
+        .bot_message {
+          padding-bottom: 25px;
         }
       }
     }
