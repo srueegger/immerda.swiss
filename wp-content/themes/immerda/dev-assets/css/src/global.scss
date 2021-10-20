@@ -208,3 +208,10 @@ button {
     }
   }
 }
+
+input,
+button {
+  &:focus {
+    box-shadow: none !important;
+  }
+}

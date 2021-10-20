@@ -227,7 +227,8 @@
 		$.each(messages_object, function(key, value) {
 			/* "msg_typ" auslesen. Mögliche Werte sind:
 			txt = für eine Chatbot Nachricht
-			asw = für eine Antwortoption */
+			asw = für eine Antwortoption 
+			form = Eingabefeld */
 			var $this = value;
 			setTimeout(function(){
 				if($this.msg_typ == 'txt') {
@@ -236,6 +237,9 @@
 				} else if($this.msg_typ == 'asw') {
 					/* Antwortoption ausgeben */
 					chatbot_message_area.append( chatbot_render_answer_option($this.resp, $this.resp_id) );
+				} else if($this.msg_typ == 'form') {
+					/* Formularfeld ausgeben */
+					chatbot_message_area.append( chatbot_render_formarea($this.formname, $this.resp_id) );
 				}
 				scroll_chatbot_to_bottom();
 			}, 1000 * key);
@@ -271,6 +275,12 @@
 		return message;
 	}
 
+	/* Chatbot Eingabefeld rendern */
+	function chatbot_render_formarea( msg, response_id ) {
+		var message = '<form autocomplete="off" class="chatbot_input_form" action=""><div class="input-group"><input type="hidden" name="responseid" value="' + response_id + '"><input type="text" class="form-control" name="inputxt" placeholder="' + msg + '" required><button class="btn btn-primary" type="submit"><i class="fas fa-angle-right text-white"></i></button></div></form>';
+		return message;
+	}
+
 	/* Chatbot Funktionen ausführen wenn auf eine Antwort geklickt wird */
 	$(document).on('click', '.response_btn', function() {
 		var chatbot_message_area = $('.chatbot_chat--body--inner');
@@ -286,6 +296,38 @@
 		var new_messages;
 		$.each(id_vars.chatbot.conclusions, function(index, value) {
 			if( parseInt( value.id ) == response_id ) {
+				/* Antwort gefunden */
+				new_messages = value.interactions;
+				return false;
+			}
+		});
+		chatbot_render_messages(new_messages);
+	});
+
+	/* Chatbot Funktion ausführen wenn ein Formularfeld ausgefüllt wird */
+	$(document).on('submit', '.chatbot_input_form', function(event) {
+		event.preventDefault();
+		var chatbot_message_area = $('.chatbot_chat--body--inner');
+		/* 
+		0: responseid
+		1: Input text
+		 */
+		var form_datas = $(this).serializeArray();
+		console.log(form_datas);
+		/* Eingabeformular ausblenden und entfernen */
+		$(this).fadeOut(250);
+		setTimeout(function() {
+			/* Das entfernen ist wichtig, damit bei einem nachfolgenden Formular diese nicht auch submitet wird */
+			$(this).remove();
+		}, 250);
+		/* Wieder nach unten scrollen */
+		scroll_chatbot_to_bottom();
+		/* Den eingegebene Text als NAchricht anzeigen */
+		chatbot_message_area.append( chatbot_render_txt_msg(form_datas[1].value, 'user') );
+		/* Korrektes Antwortobject suchen */
+		var new_messages;
+		$.each(id_vars.chatbot.conclusions, function(index, value) {
+			if( parseInt( value.id ) == parseInt( form_datas[0].value ) ) {
 				/* Antwort gefunden */
 				new_messages = value.interactions;
 				return false;

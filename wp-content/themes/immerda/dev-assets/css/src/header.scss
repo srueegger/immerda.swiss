@@ -50,9 +50,10 @@
         color: $white;
         @include font-size(.85rem);
         text-decoration: none;
+        transition: font-weight .2s;
         &:hover,
         &.active {
-          text-decoration: underline;
+          font-weight: 700;
         }
       }
       &:not(:last-of-type) {

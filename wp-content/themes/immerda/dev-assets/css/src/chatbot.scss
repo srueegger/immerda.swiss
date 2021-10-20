@@ -108,6 +108,12 @@
           }
         }
       }
+      .chatbot_input_form {
+        padding-bottom: 5px;
+        .form-control {
+          border-color: $black;
+        }
+      }
     }
   }
   @include media-breakpoint-up(md) {
