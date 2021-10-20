@@ -1,0 +1,100 @@
+#chatbot_icon {
+  position: fixed;
+  z-index: 9999;
+  transform: translateX(calc(100vw - 100px));
+  bottom: 25px;
+  background: $white;
+  border: 1px solid $black;
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  animation: show_chatbot 1s linear 1.5s forwards;
+  visibility: hidden;
+  svg {
+    color: $black;
+    font-size: 2.2rem;
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+  }
+}
+
+.chatbot_chat {
+  position: fixed;
+  right: 50px;
+  width: 400px;
+  bottom: 125px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .5s;
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  &--header {
+    height: 50px;
+    background: $black;
+    padding: 10px;
+    &--close {
+      position: absolute;
+      right: 10px;
+      bottom: 50%;
+      transform: translateY(50%);
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  &--body {
+    height: 450px;
+    background: $white;
+    overflow-y: scroll;
+    &--inner {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .bot_message {
+        padding-bottom: 25px;
+        &:first-of-type {
+          margin-top: auto;
+        }
+        &--inner {
+          background: black;
+          color: $white;
+          border-radius: 5px;
+          padding: 10px;
+          p {
+            margin-bottom: 0;
+            font-size: .9rem;
+          }
+        }
+        &--meta {
+          font-style: italic;
+          font-size: .85rem;
+          text-align: right;
+        }
+        .response_btn {
+          border: 1px solid $black;
+          border-radius: 5px;
+          background: $white;
+          width: 100%;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
+
+/* Animation Chatbot einblenden */
+@keyframes show_chatbot {
+  from {
+    transform: translateX(100vw);
+    visibility: hidden;
+  }
+  to {
+    transform: translateX(calc(100vw - 100px));
+    visibility: visible;
+  }
+}

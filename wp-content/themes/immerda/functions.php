@@ -54,12 +54,18 @@ function immerda_scripts() {
 		wp_enqueue_style( 'immerda-style', DIST_CSS . '/theme.min.css', array(), $modificated_css );
 		wp_register_script( 'immerda-script', DIST_JS . '/theme.min.js', $js_depend, $modificated_js, true );
 	}
-	$bingo_vars = array(
+	$immerda_vars = array(
 		'home_url' => HOME_URI,
 		'ajax_url' => admin_url( 'admin-ajax.php' ),
-		'ajax_security' => wp_create_nonce( 'id-security-nonce' )
+		'ajax_security' => wp_create_nonce( 'id-security-nonce' ),
+		'chatbot' => array(
+			'name' => get_field( 'chatbot_sender', 'option' ),
+			'msg_before' => '<div class="bot_message"><div class="bot_message--inner"><p>',
+			'msg_after' => '</p></div><div class="bot_message--meta">',
+			'welcome' => get_field( 'chatbot_welcome_messages', 'option' )
+		)
 	);
-	wp_localize_script( 'immerda-script', 'id_vars', $bingo_vars );
+	wp_localize_script( 'immerda-script', 'id_vars', $immerda_vars );
 	wp_enqueue_script( 'immerda-script' );
 }
 add_action("wp_enqueue_scripts", "immerda_scripts");

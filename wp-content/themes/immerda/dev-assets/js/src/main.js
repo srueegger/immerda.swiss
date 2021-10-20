@@ -12,6 +12,8 @@
 			AOS.init();
 			run_text_animation();
 			search_team_iframes();
+			/* Logo Grösse anpassen bei Chatbot */
+			$('.chatbot_chat--header span').addClass('no_font_size');
 		}, 0);
 	});
 
@@ -199,7 +201,80 @@
 		}
 	}
 
+	/* Höhe von Video Frame bei Grösse ändern anpassen */
 	$( window ).resize(function() {
 		correct_frame_embed_size();
 	});
+
+	/* Chatbot starten */
+	$('#chatbot_icon').on('click', function() {
+		/* Chatbot nut öffnen wenn er noch nicht offen ist */
+		var chatbot = $('#chatbot_chat');
+		if(!chatbot.hasClass('show')) {
+			/* HTML Inhalt leeren */
+			var chatbot_message_area = $('.chatbot_chat--body--inner');
+			chatbot_message_area.html('');
+			/* Chatbot anzeigen */
+			chatbot.addClass('show');
+			/* Einleitungstexte anzeigen */
+			$.each(id_vars.chatbot.welcome, function(key, value) {
+				/* "msg_typ" auslesen. Mögliche Werte sind:
+				txt = für eine Chatbot Nachricht
+				asw = für eine Antwortoption */
+				var $this = value;
+				setTimeout(function(){
+					if($this.msg_typ == 'txt') {
+						/* Textnachricht ausgeben */
+						chatbot_message_area.append( chatbot_render_txt_msg($this.text) );
+					} else if($this.msg_typ == 'asw') {
+						/* Antwortoption ausgeben */
+						chatbot_message_area.append( chatbot_render_answer_option($this.resp) );
+					}
+					scroll_chatbot_to_bottom();
+				}, 1000 * key);
+			});
+		}
+	});
+
+	/* Chatbot Nachrichten renden */
+	function chatbot_render_txt_msg(msg) {
+		var now = new Date();
+		var message = id_vars.chatbot.msg_before;
+		message += msg;
+		message += id_vars.chatbot.msg_after;
+		message += id_vars.chatbot.name;
+		message += ', ' + now.getHours() + ':' + now.getFullMinutes();
+		message += '</div>';
+		return message;
+	}
+
+	/* Antowrtoption rendern */
+	function chatbot_render_answer_option(msg) {
+		var message = '<div class="bot_message"><button class="response_btn" type="button">';
+		message += msg;
+		message += '</button></div>';
+		return message;
+	}
+
+	/* Chatbot schliessen */
+	$('#chatbot_close').on('click', function() {
+		$('#chatbot_chat').removeClass('show');
+	});
+
+	/* Beim Chatbot nach unten scrollen */
+	function scroll_chatbot_to_bottom() {
+		var div = document.getElementById('chatbot_body');
+		$('#chatbot_body').animate({
+			 scrollTop: div.scrollHeight - div.clientHeight
+		}, 500);
+	}
+
+	/* JavaScript Date - Minuten mit führender 0 ausgeben*/
+	Date.prototype.getFullMinutes = function () {
+		if (this.getMinutes() < 10) {
+				return '0' + this.getMinutes();
+		}
+		return this.getMinutes();
+ 	};
+ 
 })(jQuery);

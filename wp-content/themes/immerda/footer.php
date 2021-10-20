@@ -31,6 +31,7 @@
           </div>
         </div>
       </footer>
+      <?php get_template_part( 'templates/chat', 'bot' ); ?>
     </div>
     <?php wp_footer(); ?>
   </body>
