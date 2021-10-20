@@ -75,6 +75,20 @@
           p {
             margin-bottom: 0;
             font-size: .9rem;
+            a {
+              color: $white;
+              text-decoration: underline;
+            }
+          }
+          &.user {
+            background: $white;
+            border: 1px solid $black;
+            color: $black;
+            p {
+              a {
+                color: $black;
+              }
+            }
           }
         }
         &--meta {
@@ -88,6 +102,10 @@
           background: $white;
           width: 100%;
           padding: 10px;
+          transition: .2s linear;
+          &:hover {
+            background: $gray-200;
+          }
         }
       }
     }

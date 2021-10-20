@@ -60,9 +60,12 @@ function immerda_scripts() {
 		'ajax_security' => wp_create_nonce( 'id-security-nonce' ),
 		'chatbot' => array(
 			'name' => get_field( 'chatbot_sender', 'option' ),
+			'name_user' => get_field( 'chatbot_sender_user', 'option' ),
 			'msg_before' => '<div class="bot_message"><div class="bot_message--inner"><p>',
+			'msg_before_user' => '<div class="bot_message"><div class="bot_message--inner user"><p>',
 			'msg_after' => '</p></div><div class="bot_message--meta">',
-			'welcome' => get_field( 'chatbot_welcome_messages', 'option' )
+			'welcome' => get_field( 'chatbot_welcome_messages', 'option' ),
+			'conclusions' => get_field( 'chatbot_conclusions', 'option' )
 		)
 	);
 	wp_localize_script( 'immerda-script', 'id_vars', $immerda_vars );

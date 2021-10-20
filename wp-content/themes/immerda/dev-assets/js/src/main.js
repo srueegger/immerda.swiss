@@ -218,44 +218,81 @@
 			/* Chatbot anzeigen */
 			chatbot.addClass('show');
 			/* Einleitungstexte anzeigen */
-			$.each(id_vars.chatbot.welcome, function(key, value) {
-				/* "msg_typ" auslesen. Mögliche Werte sind:
-				txt = für eine Chatbot Nachricht
-				asw = für eine Antwortoption */
-				var $this = value;
-				setTimeout(function(){
-					if($this.msg_typ == 'txt') {
-						/* Textnachricht ausgeben */
-						chatbot_message_area.append( chatbot_render_txt_msg($this.text) );
-					} else if($this.msg_typ == 'asw') {
-						/* Antwortoption ausgeben */
-						chatbot_message_area.append( chatbot_render_answer_option($this.resp) );
-					}
-					scroll_chatbot_to_bottom();
-				}, 1000 * key);
-			});
+			chatbot_render_messages(id_vars.chatbot.welcome);
 		}
 	});
 
+	function chatbot_render_messages(messages_object) {
+		var chatbot_message_area = $('.chatbot_chat--body--inner');
+		$.each(messages_object, function(key, value) {
+			/* "msg_typ" auslesen. Mögliche Werte sind:
+			txt = für eine Chatbot Nachricht
+			asw = für eine Antwortoption */
+			var $this = value;
+			setTimeout(function(){
+				if($this.msg_typ == 'txt') {
+					/* Textnachricht ausgeben */
+					chatbot_message_area.append( chatbot_render_txt_msg($this.text, 'bot') );
+				} else if($this.msg_typ == 'asw') {
+					/* Antwortoption ausgeben */
+					chatbot_message_area.append( chatbot_render_answer_option($this.resp, $this.resp_id) );
+				}
+				scroll_chatbot_to_bottom();
+			}, 1000 * key);
+		});
+	}
+
 	/* Chatbot Nachrichten renden */
-	function chatbot_render_txt_msg(msg) {
+	/* Variabel: sender = bot or user */
+	function chatbot_render_txt_msg(msg, sender) {
 		var now = new Date();
-		var message = id_vars.chatbot.msg_before;
+		if(sender == 'bot') {
+			var message = id_vars.chatbot.msg_before;
+		} else if(sender == 'user') {
+			var message = id_vars.chatbot.msg_before_user;
+		}
 		message += msg;
 		message += id_vars.chatbot.msg_after;
-		message += id_vars.chatbot.name;
+		if(sender == 'bot') {
+			message += id_vars.chatbot.name;
+		} else if (sender == 'user') {
+			message += id_vars.chatbot.name_user;
+		}
 		message += ', ' + now.getHours() + ':' + now.getFullMinutes();
 		message += '</div>';
 		return message;
 	}
 
 	/* Antowrtoption rendern */
-	function chatbot_render_answer_option(msg) {
-		var message = '<div class="bot_message"><button class="response_btn" type="button">';
+	function chatbot_render_answer_option(msg, response_id) {
+		var message = '<div class="bot_message"><button data-responseid="' + response_id + '" class="response_btn" type="button">';
 		message += msg;
 		message += '</button></div>';
 		return message;
 	}
+
+	/* Chatbot Funktionen ausführen wenn auf eine Antwort geklickt wird */
+	$(document).on('click', '.response_btn', function() {
+		var chatbot_message_area = $('.chatbot_chat--body--inner');
+		var clicked_btn_text = $(this).text();
+		var response_id = $(this).data('responseid');
+		var response_btns = $('.response_btn');
+		/* Alle Buttons ausblenden und entfernen */
+		response_btns.parent().fadeOut(250);
+		/* Wieder nach unten scrollen */
+		scroll_chatbot_to_bottom();
+		chatbot_message_area.append( chatbot_render_txt_msg(clicked_btn_text, 'user') );
+		/* Korrektes Antwortobject suchen */
+		var new_messages;
+		$.each(id_vars.chatbot.conclusions, function(index, value) {
+			if( parseInt( value.id ) == response_id ) {
+				/* Antwort gefunden */
+				new_messages = value.interactions;
+				return false;
+			}
+		});
+		chatbot_render_messages(new_messages);
+	});
 
 	/* Chatbot schliessen */
 	$('#chatbot_close').on('click', function() {
