@@ -239,7 +239,7 @@
 					chatbot_message_area.append( chatbot_render_answer_option($this.resp, $this.resp_id) );
 				} else if($this.msg_typ == 'form') {
 					/* Formularfeld ausgeben */
-					chatbot_message_area.append( chatbot_render_formarea($this.formname, $this.resp_id) );
+					chatbot_message_area.append( chatbot_render_formarea($this.formname, $this.resp_id, $this.sendmail, $this.mailadr) );
 				}
 				scroll_chatbot_to_bottom();
 			}, 1000 * key);
@@ -276,8 +276,8 @@
 	}
 
 	/* Chatbot Eingabefeld rendern */
-	function chatbot_render_formarea( msg, response_id ) {
-		var message = '<form autocomplete="off" class="chatbot_input_form" action=""><div class="input-group"><input type="hidden" name="responseid" value="' + response_id + '"><input type="text" class="form-control" name="inputxt" placeholder="' + msg + '" required><button class="btn btn-primary" type="submit"><i class="fas fa-angle-right text-white"></i></button></div></form>';
+	function chatbot_render_formarea( msg, response_id, sendmail, mailadr ) {
+		var message = '<form data-sendmail="' + sendmail + '" data-mailadress="' + mailadr + '" autocomplete="off" class="chatbot_input_form" action=""><div class="input-group"><input type="hidden" name="responseid" value="' + response_id + '"><input type="text" class="form-control" name="inputxt" placeholder="' + msg + '" required><button class="btn btn-primary" type="submit"><i class="fas fa-angle-right text-white"></i></button></div></form>';
 		return message;
 	}
 
@@ -308,12 +308,12 @@
 	$(document).on('submit', '.chatbot_input_form', function(event) {
 		event.preventDefault();
 		var chatbot_message_area = $('.chatbot_chat--body--inner');
+		var sendmail = $(this).data('sendmail');
 		/* 
 		0: responseid
 		1: Input text
 		 */
 		var form_datas = $(this).serializeArray();
-		console.log(form_datas);
 		/* Eingabeformular ausblenden und entfernen */
 		$(this).fadeOut(250);
 		setTimeout(function() {
@@ -324,6 +324,21 @@
 		scroll_chatbot_to_bottom();
 		/* Den eingegebene Text als NAchricht anzeigen */
 		chatbot_message_area.append( chatbot_render_txt_msg(form_datas[1].value, 'user') );
+		/* Prüfen ob eine E-Mail gesendet werden muss */
+		if( sendmail === true ) {
+			/* E-Mail sehen */
+			var mail_adresse = $(this).data('mailadress');
+			var bot_inhalt = chatbot_message_area.html();
+			$.ajax({
+				type: 'POST',
+				url: id_vars.ajax_url,
+				data: {
+					action: 'chatbot_send_mail_ajax',
+					email: mail_adresse,
+					bot_content: bot_inhalt
+				}
+    });
+		}
 		/* Korrektes Antwortobject suchen */
 		var new_messages;
 		$.each(id_vars.chatbot.conclusions, function(index, value) {

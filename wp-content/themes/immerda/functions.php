@@ -16,6 +16,7 @@ define( 'DIST_JS', THEME_URI . '/dist-assets/js' );
  ***************************************/
 require_once 'inc/custom-blocks.php';
 require_once 'inc/custom-shortcodes.php';
+require_once 'inc/ajax-calls.php';
 
 /***************************************
  * Bildgrössen definieren
@@ -57,7 +58,6 @@ function immerda_scripts() {
 	$immerda_vars = array(
 		'home_url' => HOME_URI,
 		'ajax_url' => admin_url( 'admin-ajax.php' ),
-		'ajax_security' => wp_create_nonce( 'id-security-nonce' ),
 		'chatbot' => array(
 			'name' => get_field( 'chatbot_sender', 'option' ),
 			'name_user' => get_field( 'chatbot_sender_user', 'option' ),
@@ -181,7 +181,7 @@ add_action( 'enqueue_block_editor_assets', 'id_enqueue_block_editor_assets' );
  * Wartungsmodus
  ***************************************/
 function id_maintenance_mode() {
-	if( is_user_logged_in() && get_field( 'sys_maintenance', 'option' ) ) {
+	if( !is_user_logged_in() && get_field( 'sys_maintenance', 'option' ) ) {
 		wp_die('<h1>Under Maintenance</h1><br />Seite wird gerade bearbeitet!');
 	}
 }
