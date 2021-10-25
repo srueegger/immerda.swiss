@@ -175,3 +175,14 @@ function id_enqueue_block_editor_assets() {
 	wp_enqueue_script( 'block-filters', DIST_JS . '/block-filters.js', array( 'wp-hooks' ), '1.0.0', true );
 }
 add_action( 'enqueue_block_editor_assets', 'id_enqueue_block_editor_assets' );
+
+
+/***************************************
+ * Wartungsmodus
+ ***************************************/
+function id_maintenance_mode() {
+	if( is_user_logged_in() && get_field( 'sys_maintenance', 'option' ) ) {
+		wp_die('<h1>Under Maintenance</h1><br />Seite wird gerade bearbeitet!');
+	}
+}
+add_action('get_header', 'id_maintenance_mode');
