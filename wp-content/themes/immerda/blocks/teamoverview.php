@@ -20,7 +20,8 @@ if( !empty($block['align']) ) {
     'numberposts' => -1,
     'post_status' => 'publish',
     'post_type' => 'id_team',
-    'orderby' => 'rand'
+    'orderby' => 'rand',
+    'suppress_filters' => false
   );
   $team_members = get_posts( $args );
   if( !empty( $team_members ) ) {

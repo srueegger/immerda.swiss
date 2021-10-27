@@ -30,6 +30,12 @@ body {
   &:not(.no_font_size) {
     font-size: 1.2rem;
   }
+  &.lng-fr {
+    font-size: .75rem;
+  }
+  &.lng-it {
+    font-size: .9rem;
+  }
   @include media-breakpoint-up(lg) {
     &:not(.no_font_size) {
       font-size: 2rem;

@@ -37,7 +37,17 @@ if( !empty($block['align']) ) {
             </span>
           </h2>
         </div>
-        <h2 class="text-center static animated pulse infinite hinge d-none"><span class="id_logo no_font_size">#<span class="big">immer</span>da</span></h2>
+        <h2 class="text-center static animated pulse infinite hinge d-none">
+          <?php
+          $logo_txt = '<span class="id_logo no_font_size">#<span class="big">immer</span>da</span>';
+          if(ICL_LANGUAGE_CODE == 'fr') {
+            $logo_txt = '<span class="id_logo no_font_size">#<span class="big">toujours</span>presents</span>';
+          } elseif(ICL_LANGUAGE_CODE == 'it') {
+            $logo_txt = '<span class="id_logo no_font_size">#<span class="big">sempre</span>presenti</span>';
+          }
+          echo $logo_txt;
+          ?>
+        </h2>
       </div>
     </div>
   </div>
