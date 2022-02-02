@@ -169,14 +169,18 @@ button {
 .left_content,
 .right_content {
   height: 100%;
+  &:before {
+    content: '';
+    background: rgba(0,0,0,.45);
+    width: 100%;
+    top: 0;
+    height: 100%;
+    position: absolute;
+  }
   @include media-breakpoint-up(lg) {
     &:before {
       content: '';
-      background: rgba(0,0,0,.45);
       width: 40%;
-      top: 0;
-      height: 100%;
-      position: absolute;
     }
   }
 }
