@@ -1,0 +1,7 @@
+body {
+  .gform_button {
+    @extend .btn;
+    @extend .btn-dark;
+    @extend .btn-lg;
+  }
+}

@@ -17,6 +17,7 @@ define( 'DIST_JS', THEME_URI . '/dist-assets/js' );
 require_once 'inc/custom-blocks.php';
 require_once 'inc/custom-shortcodes.php';
 require_once 'inc/ajax-calls.php';
+require_once 'inc/gravityforms.php';
 
 /***************************************
  * Bildgrössen definieren
