@@ -9,19 +9,19 @@
     "email": "samuel@rueegger.me"
   },
   "devDependencies": {
-    "grunt": "^1.4.1",
-    "grunt-contrib-concat": "^1.0.1",
+    "grunt": "^1.5.2",
+    "grunt-contrib-concat": "^2.1.0",
     "grunt-contrib-cssmin": "^4.0.0",
-    "grunt-contrib-jshint": "^3.0.0",
+    "grunt-contrib-jshint": "^3.2.0",
     "grunt-contrib-sass": "^2.0.0",
-    "grunt-contrib-uglify": "^5.0.1",
+    "grunt-contrib-uglify": "^5.1.0",
     "grunt-contrib-watch": "^1.1.0",
     "matchdep": "^2.0.0"
   },
   "dependencies": {
     "bootstrap": "^5.1.3",
     "pace-js": "^1.2.4",
-    "hamburgers": "^1.1.3",
+    "hamburgers": "^1.2.1",
     "animate-sass": "^0.8.2",
     "aos": "^2.3.4",
     "waypoints": "^4.0.1",
