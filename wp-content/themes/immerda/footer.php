@@ -31,7 +31,11 @@
           </div>
         </div>
       </footer>
-      <?php get_template_part( 'templates/chat', 'bot' ); ?>
+      <?php
+      if( get_field( 'chatbot_on', 'option' ) ) {
+        get_template_part( 'templates/chat', 'bot' );
+      }
+      ?>
     </div>
     <?php wp_footer(); ?>
   </body>
