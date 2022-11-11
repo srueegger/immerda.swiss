@@ -204,7 +204,6 @@
 	/* Höhe von Video Frame bei Grösse ändern anpassen */
 	$( window ).resize(function() {
 		correct_frame_embed_size();
-		scroll_chatbot_to_bottom();
 	});
 
 	/* Chatbot starten */
