@@ -13,6 +13,11 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
   }
   /* Inhalt ausgeben */
   if( is_woocommerce() ) {
+    if( is_product() ) {
+      echo '<div class="container mb-4"><div class="row"><div class="col-12">';
+      echo '<a href="' . get_permalink( wc_get_page_id( 'shop' ) ) . '"><i class="far fa-long-arrow-left"></i> ' . __( 'Zurück zum Shop' ) . '</a>';
+      echo '</div></div></div>';
+    }
     echo '<div class="container"><div class="row"><div class="col-12">';
     the_content();
     echo '</div></div></div>';
