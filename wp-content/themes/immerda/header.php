@@ -56,6 +56,10 @@
                 $link_icon = get_field( 'socialmenu_icon', $menu_item );
                 echo '<li class="list-inline-item"><a href="' . esc_url( $menu_item->url ) . '" target="' . esc_attr( $link_target ) . '"><i class="' . esc_attr( $link_icon ) . '"></i></a></li>';
               }
+              if( is_woocommerce() ) {
+                global $woocommerce;
+                echo '<li class="list-inline-item"><a target="_self" href="' . esc_url( $woocommerce->cart->get_cart_url() ) . '"><i class="far fa-shopping-cart cart-icon"></i></a></li>';
+              }
               echo '</ul></div>';
             }
             id_custom_lng_switch();
