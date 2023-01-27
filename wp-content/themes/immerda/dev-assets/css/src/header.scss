@@ -107,6 +107,15 @@
         font-weight: 700;
       }
     }
+    &.wpml-ls-item {
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      &.menu-item-has-children {
+        margin-top: 25px;
+      }
+    }
   }
   @include media-breakpoint-up(lg) {
     li {
