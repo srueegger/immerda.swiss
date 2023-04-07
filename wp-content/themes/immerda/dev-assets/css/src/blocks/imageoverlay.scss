@@ -2,7 +2,7 @@
   position: relative;
   height: 100vh;
   .image_overlay--image {
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: top center;
     background-size: cover;
     height: 100vh;
@@ -31,19 +31,11 @@
     color: $white;
   }
   @include media-breakpoint-up(lg) {
+    .image_overlay--image {
+      background-attachment: fixed;
+    }
     .image_overlay--title {
       font-size: 4rem;
-    }
-  }
-}
-
-/* Safari Bugfix */
-@media not all and (min-resolution:.001dpcm) { 
-  @supports (-webkit-appearance:none) {
-    .image_overlay [class*="bg_"] {
-      .image_overlay--image {
-        background-attachment: scroll;
-      }
     }
   }
 }
