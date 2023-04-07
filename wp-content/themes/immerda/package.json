@@ -9,7 +9,7 @@
     "email": "samuel@rueegger.me"
   },
   "devDependencies": {
-    "grunt": "^1.5.3",
+    "grunt": "^1.6.1",
     "grunt-contrib-concat": "^2.1.0",
     "grunt-contrib-cssmin": "^4.0.0",
     "grunt-contrib-jshint": "^3.2.0",
