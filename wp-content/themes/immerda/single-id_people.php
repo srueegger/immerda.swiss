@@ -21,12 +21,12 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
             <h1>
             <?php
             $quote = get_field( 'people_quote_2' );
-            echo '<span class="font_quote">&bdquo;</span>';
+            echo '<span class="font_quote">&laquo;</span>';
             if( empty( $quote ) ) {
               $quote = get_field( 'people_quote' );
             }
             echo $quote;
-            echo '<span class="font_quote">&ldquo;</span>';
+            echo '<span class="font_quote">&raquo;</span>';
             ?></h1>
             <p class="mt-4"><?php the_title(); ?> - <?php the_field( 'people_job' ); ?></p>
           </div>
