@@ -149,7 +149,7 @@ if( !empty($block['align']) ) {
                   <div class="container position-relative h-100">
                     <div class="row h-100">
                       <div class="col-11 offset-1 col-lg-4 <?php echo $offset_lg; ?> align-self-end mb-40">
-                        <h1 class="mb-5"><span class="font_quote">&bdquo;</span><?php the_field( 'people_quote', $erlebnis->ID ); ?><span class="font_quote">&ldquo;</span></h1>
+                        <h1 class="mb-5"><span class="font_quote">&laquo;</span><?php the_field( 'people_quote', $erlebnis->ID ); ?><span class="font_quote">&raquo;</span></h1>
                         <?php the_field( 'people_orga', $erlebnis->ID ); ?>
                         <p class="my-lg-4"><?php echo get_the_title( $erlebnis->ID ); ?> - <?php the_field( 'people_job', $erlebnis->ID ); ?></p>
                         <button type="button" data-href="<?php echo get_the_permalink( $erlebnis->ID ); ?>" class="btn btn-outline-light btn-lg js_goto"><?php the_field( 'people_btn', $erlebnis->ID ); ?></button>
